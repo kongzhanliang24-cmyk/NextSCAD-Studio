@@ -35,6 +35,7 @@ Thumbs.db
 # ===== CAD build artefacts =====
 openscad/cad_project/export/
 openscad/cad_project/exports/
+openscad/cad_project/textures/
 *.step
 *.stl
 *.dxf
