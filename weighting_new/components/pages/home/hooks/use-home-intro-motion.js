@@ -1,10 +1,15 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { gsap } from '@/lib/gsap'
 
+// 在 SSR 環境用 useEffect、客戶端用 useLayoutEffect。
+// useLayoutEffect 在瀏覽器 paint 前同步觸發，能在畫面第一次渲染前就把 gsap.from 的初始狀態（隱藏 / 偏移）套進 DOM，
+// 避免刷新時先閃一下最終畫面才重播動畫。
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
 export function useHomeIntroMotion(pageRef) {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!pageRef.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return undefined
     }

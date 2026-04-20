@@ -36,11 +36,19 @@ export function useHomeStoryMotion({ pageRef, setActiveStoryIndex }) {
         onUpdate: self => gsap.set(stagePin, { autoAlpha: 1 - self.progress })
       })
 
-      // Scene crossfade — all scenes rendered stacked, opacity driven by scroll distance.
+      // Scene page-flip — all scenes stacked in a 3D perspective container.
+      // 前一幕往左翻出（rotateY -90°）、下一幕從右側翻入（rotateY +90° → 0）
+      // 搭配 opacity 漸變模擬「翻頁」視覺。
       const sceneEls = gsap.utils.toArray('[data-story-scene]')
       if (sceneEls.length > 0) {
-        gsap.set(sceneEls, { autoAlpha: 0 })
-        gsap.set(sceneEls[0], { autoAlpha: 1 })
+        gsap.set(sceneEls, {
+          autoAlpha: 0,
+          rotateY: 75,
+          transformOrigin: 'left center',
+          transformPerspective: 1400,
+          transformStyle: 'preserve-3d'
+        })
+        gsap.set(sceneEls[0], { autoAlpha: 1, rotateY: 0 })
 
         for (let i = 1; i < sceneEls.length; i += 1) {
           const card = storyCards[i]
@@ -55,9 +63,20 @@ export function useHomeStoryMotion({ pageRef, setActiveStoryIndex }) {
             end: 'top 25%',
             scrub: true,
             onUpdate: self => {
-              gsap.set(next, { autoAlpha: self.progress })
-              gsap.set(prev, { autoAlpha: 1 - self.progress })
-              setActiveStoryIndex(self.progress > 0.5 ? i : i - 1)
+              const p = self.progress
+              // Outgoing scene: 0° → -90°（往左翻走），opacity 1 → 0
+              gsap.set(prev, {
+                autoAlpha: 1 - p,
+                rotateY: p * -90,
+                transformOrigin: 'right center'
+              })
+              // Incoming scene: 75° → 0°（從右翻入），opacity 0 → 1
+              gsap.set(next, {
+                autoAlpha: p,
+                rotateY: (1 - p) * 75,
+                transformOrigin: 'left center'
+              })
+              setActiveStoryIndex(p > 0.5 ? i : i - 1)
             }
           })
         }

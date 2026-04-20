@@ -60,18 +60,18 @@ export default function StorySection({ activeStoryIndex, storyMoments }) {
                   <div className="grid gap-6">
                     <div>
                       <div className="text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-400">0{activeStoryIndex + 1} / 0{storyMoments.length}</div>
-                      <div className="relative mt-4 grid [grid-template-areas:'stack']">
+                      <div className="relative mt-4 grid [grid-template-areas:'stack'] [perspective:1400px] [perspective-origin:left_center]">
                         {storyMoments.map((moment, index) => (
                           <div
                             key={index}
                             data-story-scene
                             data-scene-index={index}
-                            className="[grid-area:stack] max-w-3xl"
+                            className="[grid-area:stack] max-w-3xl [backface-visibility:hidden]"
                           >
                             <div className="eyebrow border-white/15 bg-white/[0.04] text-white/85">{t(moment.eyebrow)}</div>
-                            <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl xl:text-6xl">{t(moment.title)}</h2>
-                            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">{t(moment.description)}</p>
-                            <div className="mt-8 flex flex-wrap gap-3">
+                            <h2 className="mt-5 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-white md:text-3xl xl:text-4xl">{t(moment.title)}</h2>
+                            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 md:text-base md:leading-8">{t(moment.description)}</p>
+                            <div className="mt-6 flex flex-wrap gap-2.5">
                               {moment.bullets.map((bullet, bulletIndex) => (
                                 <div key={bulletIndex} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-slate-100 backdrop-blur-xl">
                                   <CheckCircle2 className="h-4 w-4 text-accent" />

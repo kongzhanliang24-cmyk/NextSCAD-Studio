@@ -4,6 +4,7 @@ import { Component, memo, Suspense, useEffect, useLayoutEffect, useMemo, useRef,
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { CubicBezierLine, ContactShadows, Float, Line, OrbitControls, Sparkles, Stage, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
+import { assetUrl } from '@/lib/base-path'
 
 const fallbackProfile = {
   sceneTitle: { zh: '智能秤 3D Configurator', en: 'Smart Scale 3D Configurator' },
@@ -55,7 +56,7 @@ const ProceduralBaseTerminal = memo(ProceduralBaseTerminalInner)
 
 // 1b. GLB 版本 — 從 /public/models/*.glb 載入真實模型（自動適配畫面）
 function GLBBaseTerminalInner({ path, transform }) {
-  const { scene } = useGLTF(path)
+  const { scene } = useGLTF(assetUrl(path))
 
   // clone 並計算 bounding box 以自動縮放+置中，避免因單位差異（mm/cm/m）導致看不見
   const { object, autoScale, autoOffset, bounds } = useMemo(() => {
@@ -235,7 +236,7 @@ const GPIOModule = memo(function GPIOModule({ accessory, focused }) {
 // GLB 配件：自動縮放到 targetSize，放置在 accessory.position
 // 配件可在 JSON 以 accessory.glbTransform 進一步微調 (scale / rotation / offset / targetSize / autoFit:false)
 function GLBAccessoryInner({ path, position, glbTransform = {} }) {
-  const { scene } = useGLTF(path)
+  const { scene } = useGLTF(assetUrl(path))
 
   const { object, autoScale, autoOffset } = useMemo(() => {
     const copy = scene.clone(true)
@@ -587,7 +588,7 @@ function SceneContents({ profile, selectedAccessoryIds, focusedAccessoryId, acti
                         ? cable.plugs.map((plug, i) => (
                             <Suspense key={`${accessory.id}-plug-${i}`} fallback={null}>
                               <GLBAccessory
-                                path={plug.glbPath || '/models/rs232_plug.glb'}
+                                path={plug.glbPath || '/models/rs232_plug.glb'} /* assetUrl applied inside GLBAccessory */
                                 position={plug.position}
                                 glbTransform={{
                                   rotation: plug.rotation,

@@ -54,13 +54,13 @@ export default function Navbar({ companyInfo }) {
       <div className="shell-container">
         <div className="nav-surface rounded-[1.6rem] px-4 py-3 shadow-[0_20px_70px_rgba(2,6,23,0.45)]">
           <div className="flex items-center justify-between gap-4">
-            <TransitionLink href="/" className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-accent">
+            <TransitionLink href="/" className="flex min-w-0 items-center gap-3">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-accent">
                 <span className="text-sm font-semibold tracking-[0.2em]">HD</span>
               </div>
-              <div>
-                <div className="text-sm font-semibold text-white">{t(companyInfo.brandName)}</div>
-                <div className="text-xs text-slate-400">{t(companyInfo.tagline)}</div>
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold text-white">{t(companyInfo.brandName)}</div>
+                <div className="hidden max-w-[18rem] truncate text-xs text-slate-400 xl:block">{t(companyInfo.tagline)}</div>
               </div>
             </TransitionLink>
 
@@ -187,8 +187,8 @@ export default function Navbar({ companyInfo }) {
                 <Globe className="h-4 w-4" />
                 <span>{mounted && lang === 'zh' ? 'EN' : '中文'}</span>
               </button>
-              <TransitionLink href="/contact" className="solid-button">
-                {t({ zh: '預約諮詢', en: 'Book Consultation' })}
+              <TransitionLink href="/contact" className="solid-button whitespace-nowrap">
+                {t({ zh: '預約諮詢', en: 'Book a Demo' })}
                 <ArrowRight className="h-4 w-4" />
               </TransitionLink>
             </div>

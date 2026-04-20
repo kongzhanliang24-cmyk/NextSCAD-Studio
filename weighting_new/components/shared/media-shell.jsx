@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/components/providers/language-provider'
+import { assetUrl } from '@/lib/base-path'
 
 export default function MediaShell({ eyebrow, title, description, src = '', className = '', compact = false }) {
   const { t } = useLanguage()
@@ -10,7 +11,7 @@ export default function MediaShell({ eyebrow, title, description, src = '', clas
       <div
         className="absolute inset-0 opacity-80"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(15,31,51,0.92) 0%, rgba(45,90,142,0.52) 40%, rgba(232,168,56,0.16) 100%), url(${src})`,
+          backgroundImage: `linear-gradient(135deg, rgba(15,31,51,0.92) 0%, rgba(45,90,142,0.52) 40%, rgba(232,168,56,0.16) 100%), url(${src ? assetUrl(src) : ''})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
