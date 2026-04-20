@@ -3,7 +3,7 @@ import { createMetadata } from '@/lib/metadata'
 
 export const metadata = createMetadata({
   title: { zh: '聯絡我們', en: 'Contact' },
-  description: { zh: '聯絡宏德度量衡，討論產品選型、系統規劃與整合需求。', en: 'Contact Honder Scale for product selection, system planning, and integration consultation.' },
+  description: { zh: '聯絡 NextSCAD Studio，透過 GitHub Issues 與 Pull Requests 參與討論。', en: 'Contact NextSCAD Studio via GitHub Issues and Pull Requests.' },
   path: '/contact'
 })
 

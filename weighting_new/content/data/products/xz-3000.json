@@ -90,6 +90,12 @@
       "title": { "zh": "當前裝置使用靜態展示模式，仍可預覽配件邏輯與場景重點", "en": "This device is using static preview mode while still preserving accessory logic and scene emphasis." },
       "description": { "zh": "若裝置效能不足、偵測到 reduced motion，或尚未提供正式 GLB 素材，系統會切換為靜態版 configurator。", "en": "If the device is underpowered, reduced motion is enabled, or production GLB assets are not ready, the configurator switches to a static presentation mode." }
     },
+    "ports": {
+      "usb_1": { "pos": [0.431, -0.656, 0.328], "face": "bottom", "type": "usb" },
+      "usb_2": { "pos": [0.300, -0.656, 0.328], "face": "bottom", "type": "usb" },
+      "rs232_back_1": { "pos": [0.868, 0.20, 0.164], "face": "back", "type": "rs232" },
+      "rs232_back_2": { "pos": [0.868, -0.27, 0.164], "face": "back", "type": "rs232" }
+    },
     "defaultAccessoryIds": [],
     "cameraPresets": [
       {
@@ -120,6 +126,9 @@
         "label": { "zh": "掃碼槍", "en": "Scanner" },
         "description": { "zh": "連接前側 USB，快速完成條碼讀取。", "en": "Connect to the front USB port for fast barcode scanning." },
         "type": "scanner",
+        "glbPath": "/models/scanner.glb",
+        "glbTransform": { "targetSize": 0.9, "rotation": [0, 0.6, 0] },
+        "cable": { "portId": "usb_2", "exit": [-0.06, -0.45, -0.09], "color": "#1a1a1a", "sag": 0.3, "thickness": 0.012 },
         "anchor": [0.98, -0.22, 0.03],
         "position": [1.7, -0.58, 0.08],
         "focusPreset": "ports",
@@ -130,8 +139,10 @@
         "label": { "zh": "隨身碟", "en": "USB Drive" },
         "description": { "zh": "做離線備份、報表匯出與快速交接。", "en": "Use for offline backup, report export, and rapid handoff." },
         "type": "usb",
-        "anchor": [-0.92, -0.26, 0.03],
-        "position": [-1.24, -0.3, 0.06],
+        "glbPath": "/models/usb_disk.glb",
+        "glbTransform": { "targetSize": 0.38, "rotation": [1.5707, 3.14159, 0] },
+        "anchor": [0.431, -0.656, 0.328],
+        "position": [0.431, -0.85, 0.328],
         "focusPreset": "ports",
         "dependencies": []
       },
@@ -140,8 +151,21 @@
         "label": { "zh": "列印機", "en": "Printer" },
         "description": { "zh": "輸出標籤、收據與現場作業單。", "en": "Print labels, receipts, and on-site operation sheets." },
         "type": "printer",
+        "glbPath": "/models/printer.glb",
+        "glbTransform": { "targetSize": 1.9, "rotation": [0, 0.3, 0] },
+        "cable": {
+          "portId": "rs232_back_1",
+          "exit": [-0.01, -0.41, -0.94],
+          "color": "#1a1a1a",
+          "sag": 0.18,
+          "thickness": 0.012,
+          "plugs": [
+            { "position": [0.868, 0.20, 0.07], "rotation": [1.5707, 3.14159, 0], "targetSize": 0.22, "leadDir": [0, 0, -1] },
+            { "position": [-2.95, -1.02, -1.02], "rotation": [0, 1.8708, 1.5707], "targetSize": 0.22, "leadDir": [-0.3, 0, -0.95] }
+          ]
+        },
         "anchor": [0.88, -0.28, 0.03],
-        "position": [-1.9, -0.72, 0],
+        "position": [-2.9, -0.6, 0],
         "focusPreset": "overview",
         "dependencies": []
       },
@@ -150,6 +174,9 @@
         "label": { "zh": "USB 攝像頭", "en": "USB Camera" },
         "description": { "zh": "補足現場拍照取證與資料留存。", "en": "Capture on-site imagery for evidence and process records." },
         "type": "camera",
+        "glbPath": "/models/usb_camera.glb",
+        "glbTransform": { "targetSize": 0.5, "rotation": [0, 0, 0] },
+        "cable": { "portId": "usb_1", "exit": [0, -0.03, -0.22], "color": "#1a1a1a", "sag": 0.35, "thickness": 0.012 },
         "anchor": [0.22, 0.58, 0.1],
         "position": [0.34, 1.02, 0.12],
         "focusPreset": "display",
@@ -157,11 +184,29 @@
       },
       {
         "id": "gpio",
-        "label": { "zh": "GPIO 模組", "en": "GPIO Module" },
-        "description": { "zh": "對接蜂鳴器、號誌燈與現場訊號控制。", "en": "Connect buzzers, tower lights, and on-site control signals." },
+        "label": { "zh": "GPIO 三色塔燈", "en": "GPIO Tower Light" },
+        "description": { "zh": "透過 GPIO 模組驅動的三色號誌塔燈，對接蜂鳴器與現場訊號控制，讓作業狀態一目了然。", "en": "A three-color signal tower driven by the GPIO module, paired with buzzers and on-site signal control to make operational status instantly visible." },
         "type": "gpio",
+        "glbPath": "/models/tower_light.glb",
+        "glbTransform": { "targetSize": 2.5, "rotation": [0, 0, 0] },
+        "cable": {
+          "portId": "rs232_back_2",
+          "exit": [0, -1.25, 0.05],
+          "color": "#1a1a1a",
+          "sag": 0.55,
+          "thickness": 0.012,
+          "plugs": [
+            { "position": [0.868, -0.27, 0.07], "rotation": [1.5707, 3.14159, 0], "targetSize": 0.22, "leadDir": [0, 0, -1] }
+          ],
+          "hole": {
+            "position": [2.5, -0.60, 0.05],
+            "normal": [0, -1, 0],
+            "radius": 0.03,
+            "color": "#050505"
+          }
+        },
         "anchor": [1.04, 0.14, 0.02],
-        "position": [1.58, 0.18, 0.02],
+        "position": [2.5, 0.65, 0],
         "focusPreset": "ports",
         "dependencies": []
       }

@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="section-space">
         <div className="shell-container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <div className="eyebrow">{t({ zh: 'About Honder', en: 'About Honder' })}</div>
+            <div className="eyebrow">{t({ zh: 'About NextSCAD Studio', en: 'About NextSCAD Studio' })}</div>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-5xl">{t(companyInfo.fullName)}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{t(companyInfo.description)}</p>
             <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400">{t(companyInfo.mission)}</p>

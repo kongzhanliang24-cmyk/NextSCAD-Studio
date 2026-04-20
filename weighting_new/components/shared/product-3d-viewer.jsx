@@ -2,7 +2,7 @@
 
 import { Component, memo, Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { ContactShadows, Float, Line, OrbitControls, Sparkles, Stage, useGLTF } from '@react-three/drei'
+import { CubicBezierLine, ContactShadows, Float, Line, OrbitControls, Sparkles, Stage, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 const fallbackProfile = {
@@ -89,13 +89,12 @@ function GLBBaseTerminalInner({ path, transform }) {
 
   // 診斷日誌：每次 GLB 載入時印出原始尺寸，方便調整
   useEffect(() => {
-    console.log('[Product3DViewer] GLB loaded:', {
-      path,
-      rawSize: bounds.size.map((n) => n.toFixed(3)),
-      rawCenter: bounds.center.map((n) => n.toFixed(3)),
-      autoScale: autoScale.toFixed(4),
-      mode: transform?.autoFit === false ? 'manual' : 'auto-fit'
-    })
+    const size = bounds.size
+    const center = bounds.center
+    console.log(
+      `%c[GLB BOUNDS] ${path}\n  rawSize  = [${size.map((n) => n.toFixed(2)).join(', ')}]\n  rawCenter= [${center.map((n) => n.toFixed(2)).join(', ')}]\n  autoScale= ${autoScale.toFixed(5)}\n  scaled   = [${(size[0] * autoScale).toFixed(3)}, ${(size[1] * autoScale).toFixed(3)}, ${(size[2] * autoScale).toFixed(3)}]`,
+      'background:#1e293b;color:#38bdf8;padding:4px 8px;border-radius:4px;font-family:monospace;'
+    )
   }, [path, autoScale, bounds, transform?.autoFit])
 
   // 預設啟用 auto-fit；若使用者在 JSON 設 autoFit:false，則改用手動 transform
@@ -233,13 +232,191 @@ const GPIOModule = memo(function GPIOModule({ accessory, focused }) {
   )
 })
 
-function AccessoryMesh({ accessory, focused }) {
+// GLB 配件：自動縮放到 targetSize，放置在 accessory.position
+// 配件可在 JSON 以 accessory.glbTransform 進一步微調 (scale / rotation / offset / targetSize / autoFit:false)
+function GLBAccessoryInner({ path, position, glbTransform = {} }) {
+  const { scene } = useGLTF(path)
+
+  const { object, autoScale, autoOffset } = useMemo(() => {
+    const copy = scene.clone(true)
+    copy.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true
+        child.receiveShadow = true
+      }
+    })
+    const box = new THREE.Box3().setFromObject(copy)
+    const size = box.getSize(new THREE.Vector3())
+    const center = box.getCenter(new THREE.Vector3())
+    const targetSize = glbTransform.targetSize ?? 0.65
+    const maxDim = Math.max(size.x, size.y, size.z)
+    const scale = maxDim > 0 ? targetSize / maxDim : 1
+    return {
+      object: copy,
+      autoScale: scale,
+      autoOffset: [-center.x * scale, -center.y * scale, -center.z * scale]
+    }
+  }, [scene, glbTransform.targetSize])
+
+  const useAutoFit = glbTransform.autoFit !== false
+  const baseScale = useAutoFit ? autoScale : (glbTransform.scale ?? 1)
+  const finalScale = Array.isArray(baseScale) ? baseScale : baseScale * (glbTransform.scaleMultiplier ?? 1)
+  const rotation = glbTransform.rotation ?? [0, 0, 0]
+  const offset = glbTransform.offset ?? [0, 0, 0]
+  const finalPosition = useAutoFit
+    ? [position[0] + autoOffset[0] + offset[0], position[1] + autoOffset[1] + offset[1], position[2] + autoOffset[2] + offset[2]]
+    : [position[0] + offset[0], position[1] + offset[1], position[2] + offset[2]]
+
+  return (
+    <primitive
+      object={object}
+      scale={finalScale}
+      rotation={rotation}
+      position={finalPosition}
+      dispose={null}
+    />
+  )
+}
+const GLBAccessory = memo(GLBAccessoryInner)
+
+function GLBAccessoryWithFallback({ accessory, focused }) {
+  return (
+    <GLBErrorBoundary fallback={<ProceduralAccessory accessory={accessory} focused={focused} />}>
+      <Suspense fallback={null}>
+        <GLBAccessory
+          path={accessory.glbPath}
+          position={accessory.position}
+          glbTransform={accessory.glbTransform}
+        />
+      </Suspense>
+    </GLBErrorBoundary>
+  )
+}
+
+function ProceduralAccessory({ accessory, focused }) {
   if (accessory.type === 'scanner') return <Scanner accessory={accessory} focused={focused} />
   if (accessory.type === 'usb') return <USBDrive accessory={accessory} focused={focused} />
   if (accessory.type === 'printer') return <Printer accessory={accessory} focused={focused} />
   if (accessory.type === 'camera') return <CameraAccessory accessory={accessory} focused={focused} />
   if (accessory.type === 'gpio') return <GPIOModule accessory={accessory} focused={focused} />
   return null
+}
+
+function AccessoryMesh({ accessory, focused }) {
+  if (accessory.glbPath) {
+    return <GLBAccessoryWithFallback accessory={accessory} focused={focused} />
+  }
+  return <ProceduralAccessory accessory={accessory} focused={focused} />
+}
+
+// 接口朝外方向 — 從面決定
+const FACE_NORMALS = {
+  bottom: [0, -1, 0],
+  top: [0, 1, 0],
+  left: [-1, 0, 0],
+  right: [1, 0, 0],
+  front: [0, 0, 1],
+  back: [0, 0, -1]
+}
+
+// 接口外殼 — 一個嵌在儀表上的矩形插座
+function PortSocket({ pos, face = 'bottom', type = 'usb' }) {
+  const dims = type === 'rs232' ? [0.15, 0.07, 0.05] : [0.13, 0.05, 0.04] // [w, h, depth]
+  const rot = face === 'bottom' || face === 'top'
+    ? [Math.PI / 2, 0, 0]
+    : face === 'back' || face === 'front'
+      ? [0, face === 'back' ? Math.PI : 0, 0]
+      : [0, face === 'right' ? Math.PI / 2 : -Math.PI / 2, 0]
+  const normal = FACE_NORMALS[face] || FACE_NORMALS.bottom
+  // 把外殼向面外偏半個深度，讓它剛好貼在面上
+  const offset = dims[2] / 2
+  const pCenter = [pos[0] + normal[0] * offset, pos[1] + normal[1] * offset, pos[2] + normal[2] * offset]
+  return (
+    <group position={pCenter} rotation={rot}>
+      {/* 插座外殼 */}
+      <mesh castShadow>
+        <boxGeometry args={[dims[0], dims[1], dims[2]]} />
+        <meshStandardMaterial color="#0f172a" roughness={0.6} metalness={0.4} />
+      </mesh>
+      {/* 金屬內凹開口 */}
+      <mesh position={[0, 0, 0.005]}>
+        <boxGeometry args={[dims[0] * 0.78, dims[1] * 0.55, dims[2] * 0.5]} />
+        <meshStandardMaterial color="#94a3b8" roughness={0.35} metalness={0.9} />
+      </mesh>
+    </group>
+  )
+}
+
+// 小黑圓盤：模擬線纜進入配件本體的孔（cable passthrough hole）
+function CableHole({ position, normal = [0, -1, 0], radius = 0.04, color = '#050505' }) {
+  const quaternion = useMemo(() => {
+    const q = new THREE.Quaternion()
+    q.setFromUnitVectors(
+      new THREE.Vector3(0, 0, 1),
+      new THREE.Vector3(...normal).normalize()
+    )
+    return q
+  }, [normal[0], normal[1], normal[2]])
+  return (
+    <mesh position={position} quaternion={quaternion}>
+      <circleGeometry args={[radius, 24]} />
+      <meshStandardMaterial color={color} side={THREE.DoubleSide} roughness={0.95} />
+    </mesh>
+  )
+}
+
+// 電纜：從儀表接口到配件，使用三次貝茲曲線讓線有自然垂落感
+// 使用 TubeGeometry 讓粗細在 3D 中一致（lineWidth 是像素，遠近會不同）
+// 支援 portLead / exitLead：從兩端各延伸一段沿插頭背面方向的直線段（模擬應力緩衝段），
+// 才進入自然垂落的貝茲曲線，避免線從插頭側面鑽出的不自然感。
+function AccessoryCable({
+  portPos,
+  exitPos,
+  portLead,
+  exitLead,
+  leadLength = 0.074,
+  color = '#1f2937',
+  sag = 0.35,
+  thickness = 0.018
+}) {
+  const geo = useMemo(() => {
+    const p0 = new THREE.Vector3(...portPos)
+    const p3 = new THREE.Vector3(...exitPos)
+
+    // 若 leadDir 有提供，計算延伸後的端點 p0L / p3L；否則退化為與端點相同
+    const leadVec = (dir) => {
+      if (!dir || (dir[0] === 0 && dir[1] === 0 && dir[2] === 0)) return new THREE.Vector3(0, 0, 0)
+      return new THREE.Vector3(...dir).normalize().multiplyScalar(leadLength)
+    }
+    const p0L = p0.clone().add(leadVec(portLead))
+    const p3L = p3.clone().add(leadVec(exitLead))
+
+    const dist = p0L.distanceTo(p3L)
+    const dip = Math.max(0.2, dist * sag)
+    const midA = new THREE.Vector3(
+      p0L.x + (p3L.x - p0L.x) * 0.3,
+      Math.min(p0L.y, p3L.y) - dip,
+      p0L.z + (p3L.z - p0L.z) * 0.3
+    )
+    const midB = new THREE.Vector3(
+      p0L.x + (p3L.x - p0L.x) * 0.7,
+      Math.min(p0L.y, p3L.y) - dip,
+      p0L.z + (p3L.z - p0L.z) * 0.7
+    )
+
+    const path = new THREE.CurvePath()
+    if (portLead) path.add(new THREE.LineCurve3(p0, p0L))
+    path.add(new THREE.CubicBezierCurve3(p0L, midA, midB, p3L))
+    if (exitLead) path.add(new THREE.LineCurve3(p3L, p3))
+
+    return new THREE.TubeGeometry(path, 64, thickness, 10, false)
+  }, [portPos, exitPos, portLead, exitLead, leadLength, sag, thickness])
+
+  return (
+    <mesh geometry={geo} castShadow>
+      <meshStandardMaterial color={color} roughness={0.85} metalness={0.05} />
+    </mesh>
+  )
 }
 
 function AccessoryConnection({ accessory, active, focused }) {
@@ -274,6 +451,19 @@ function CameraRig({ activePreset, controlsRef }) {
   useLayoutEffect(() => {
     transitioningRef.current = true
   }, [desiredPosition, desiredTarget])
+
+  // 使用者開始拖曳/縮放時立即取消預設相機動畫，避免「彈回」
+  useEffect(() => {
+    const controls = controlsRef.current
+    if (!controls) return
+    const cancel = () => {
+      transitioningRef.current = false
+    }
+    controls.addEventListener('start', cancel)
+    return () => {
+      controls.removeEventListener('start', cancel)
+    }
+  }, [controlsRef])
 
   useFrame(() => {
     if (!transitioningRef.current) return
@@ -310,37 +500,118 @@ function SceneContents({ profile, selectedAccessoryIds, focusedAccessoryId, acti
   const selectedSet = useMemo(() => new Set(selectedAccessoryIds), [selectedAccessoryIds])
   const focusedAccessory = profile.accessories.find((item) => item.id === focusedAccessoryId) || null
 
-  // GLB 模式下，procedural 配件的 anchor 座標不再對齊真實接口 —— 暫時隱藏
-  // 等你有配件 GLB 後，可在 JSON 的每個 accessory 補上正確 anchor 座標並改回顯示
+  // GLB 模式下，有 glbPath 的配件直接載入 GLB；沒有 glbPath 的配件降級為 procedural。
+  // 連接線（anchor）在 GLB 模式下隱藏，因為座標未重新校準
   const isGLBMode = profile.baseModel?.status === 'ready'
-  const showProceduralAccessories = !isGLBMode
+  const showProceduralAccessories = true
+  const showConnectionLines = !isGLBMode
 
   return (
     <>
-      <ambientLight intensity={0.7} />
-      <spotLight position={[8, 8, 10]} angle={0.22} penumbra={1} intensity={1.3} castShadow />
-      <pointLight position={[-5, 2, 4]} intensity={0.55} color="#38bdf8" />
-      <pointLight position={[5, -2, 2]} intensity={0.45} color="#f59e0b" />
+      {/* 白色背景的工作室全方位打光（上下前後都有） */}
+      <ambientLight intensity={2.6} />
+      {/* 半球光：上下顏色都設亮，避免底面偏暗 */}
+      <hemisphereLight args={["#ffffff", "#f5f2ea", 2.0]} />
+      {/* 上方主光群 */}
+      <directionalLight position={[5, 8, 6]} intensity={2.4} castShadow />
+      <directionalLight position={[-6, 4, -4]} intensity={1.5} />
+      <directionalLight position={[0, 6, -6]} intensity={1.2} />
+      {/* 下方補光群（新增，避免從底視角時接口全黑） */}
+      <directionalLight position={[0, -8, 0]} intensity={1.8} />
+      <directionalLight position={[4, -6, 4]} intensity={1.0} />
+      <directionalLight position={[-4, -6, -4]} intensity={1.0} />
+      {/* 前方近距離補光 */}
+      <pointLight position={[0, 0, 3]} intensity={1.2} color="#ffffff" />
+      <pointLight position={[0, -3, 2]} intensity={1.2} color="#ffffff" />
+      <pointLight position={[3, 2, 2]} intensity={0.6} color="#fff7e6" />
 
       <Suspense fallback={null}>
-        <Stage intensity={0.35} contactShadow={false} adjustCamera={false}>
+        <group>
           <Float speed={1.15} rotationIntensity={0.18} floatIntensity={0.22}>
             <BaseTerminal baseModel={profile.baseModel} />
+            {/* 儲表 GLB 已經有真實接口孔洞，不重複繪製 PortSocket */}
             {showProceduralAccessories
               ? profile.accessories.map((accessory) => {
                   const active = selectedSet.has(accessory.id)
                   const focused = focusedAccessoryId === accessory.id
 
+                  // 電纜資訊：accessory.cable = { portId, exit:[x,y,z], color, sag, thickness }
+                  const cable = accessory.cable
+                  const portEntry = cable?.portId ? profile.ports?.[cable.portId] : null
+                  const portPos = portEntry
+                    ? (Array.isArray(portEntry) ? portEntry : portEntry.pos)
+                    : null
+                  const exitPos = cable
+                    ? [
+                        accessory.position[0] + (cable.exit?.[0] ?? 0),
+                        accessory.position[1] + (cable.exit?.[1] ?? 0),
+                        accessory.position[2] + (cable.exit?.[2] ?? 0)
+                      ]
+                    : null
+
                   return (
                     <group key={accessory.id}>
-                      <AccessoryConnection accessory={accessory} active={active} focused={focused} />
+                      {showConnectionLines ? (
+                        <AccessoryConnection accessory={accessory} active={active} focused={focused} />
+                      ) : null}
                       {active ? <AccessoryMesh accessory={accessory} focused={focused} /> : null}
+                      {active && portPos && exitPos ? (() => {
+                        // 若有 plug 配置，cable 附著在 plug 的 backshell 尾端（bbox 中心 + leadDir × 尾端偏移）
+                        // 否則退化到原本的 port/exit 座標
+                        const tailOffset = (plug) => {
+                          if (!plug?.leadDir || !plug?.position) return null
+                          const ts = plug.targetSize ?? 0.18
+                          const off = (ts / 37.2) * 18.6 // 以 plug max dim 37.2mm 與 backshell 半長 18.6mm 換算
+                          return [
+                            plug.position[0] + plug.leadDir[0] * off,
+                            plug.position[1] + plug.leadDir[1] * off,
+                            plug.position[2] + plug.leadDir[2] * off
+                          ]
+                        }
+                        const attachPort = tailOffset(cable.plugs?.[0]) || portPos
+                        const attachExit = tailOffset(cable.plugs?.[1]) || exitPos
+                        return (
+                          <AccessoryCable
+                            portPos={attachPort}
+                            exitPos={attachExit}
+                            portLead={cable.plugs?.[0]?.leadDir}
+                            exitLead={cable.plugs?.[1]?.leadDir}
+                            leadLength={cable.leadLength}
+                            color={cable.color || (focused ? '#f59e0b' : '#1f2937')}
+                            sag={cable.sag}
+                            thickness={cable.thickness}
+                          />
+                        )
+                      })() : null}
+                      {active && cable?.plugs?.length
+                        ? cable.plugs.map((plug, i) => (
+                            <Suspense key={`${accessory.id}-plug-${i}`} fallback={null}>
+                              <GLBAccessory
+                                path={plug.glbPath || '/models/rs232_plug.glb'}
+                                position={plug.position}
+                                glbTransform={{
+                                  rotation: plug.rotation,
+                                  targetSize: plug.targetSize ?? 0.18
+                                }}
+                              />
+                            </Suspense>
+                          ))
+                        : null}
+                      {active && cable?.hole ? (
+                        <CableHole
+                          position={cable.hole.position}
+                          normal={cable.hole.normal}
+                          radius={cable.hole.radius}
+                          color={cable.hole.color}
+                        />
+                      ) : null}
                     </group>
                   )
                 })
               : null}
           </Float>
-          {focusedAccessory && showProceduralAccessories ? (
+        </group>
+        {focusedAccessory && selectedSet.has(focusedAccessory.id) ? (
             <Sparkles
               count={42}
               scale={[1.6, 1.2, 1.2]}
@@ -350,9 +621,8 @@ function SceneContents({ profile, selectedAccessoryIds, focusedAccessoryId, acti
               color="#fde68a"
             />
           ) : null}
-        </Stage>
-        {/* 儀表頭約 1.2 高、中心在 y=0，所以底部在 y=-0.6；shadow 放更低一點產生飄浮感 */}
-        <ContactShadows position={[0, -0.9, 0]} opacity={0.35} scale={8} blur={2.4} far={4} />
+        {/* 儀表底部約在 y=-0.89；shadow 放更低一點產生飄浮感 */}
+        <ContactShadows position={[0, -1.1, 0]} opacity={0.35} scale={8} blur={2.4} far={4} />
       </Suspense>
 
       <CameraRig activePreset={activePreset} controlsRef={controlsRef} />
@@ -478,8 +748,8 @@ export default function Product3DViewer({ profile, selectedAccessoryIds = [], fo
   }
 
   return (
-    <div className="relative h-[640px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 shadow-[0_34px_120px_rgba(2,6,23,0.5)] lg:h-[780px]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(56,189,248,0.18),transparent_24%),radial-gradient(circle_at_84%_12%,rgba(245,158,11,0.14),transparent_20%),linear-gradient(180deg,rgba(15,23,42,0.12),rgba(2,6,23,0.55))]" />
+    <div className="relative h-[640px] w-full overflow-hidden rounded-[2rem] border border-slate-200/80 bg-[#f5f2ea] shadow-[0_34px_120px_rgba(15,23,42,0.12)] lg:h-[780px]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.9),transparent_45%),radial-gradient(circle_at_80%_85%,rgba(226,217,198,0.55),transparent_50%),linear-gradient(180deg,#faf7f1,#ece4d3)]" />
       <Canvas dpr={[1, 1.5]} shadows camera={{ position: activePreset.position, fov: 40 }}>
         <SceneContents
           profile={resolvedProfile}
@@ -489,7 +759,7 @@ export default function Product3DViewer({ profile, selectedAccessoryIds = [], fo
         />
       </Canvas>
 
-      <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-slate-950/60 px-3 py-1.5 text-[10px] uppercase tracking-[0.28em] text-slate-400 backdrop-blur-md">
+      <div className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-slate-300/60 bg-white/70 px-3 py-1.5 text-[10px] uppercase tracking-[0.28em] text-slate-600 backdrop-blur-md">
         {t({ zh: '拖曳旋轉 · 滾輪縮放 · 右鍵平移', en: 'Drag to rotate · Scroll to zoom · Right-click to pan' })}
       </div>
     </div>

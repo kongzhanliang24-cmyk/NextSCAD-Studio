@@ -55,7 +55,7 @@ HEX_CIRCUMS_R = 5.5    # 六角外接圆半径（≈flat2flat 9.5mm）
 HEX_THICK     = 3.0    # 护套厚度（凸出背面）
 
 # 线缆
-CABLE_R        = 1.8
+CABLE_R        = 1.5
 CABLE_BACK_LEN = 18.0   # 向后直线段
 CABLE_DOWN_LEN = 32.0   # 下垂段
 CABLE_Z        = -3.0    # 出线孔 Z 坐标（略偏下）
@@ -271,7 +271,7 @@ def make_usb_camera() -> cq.Assembly:
     assy.add(_make_lens_metal(),  name="lens_metal",  color=METAL_COLOR)
     assy.add(_make_lens_glass(),  name="lens_glass",  color=LENS_COLOR)
     assy.add(_make_hex_grommet(), name="hex_grommet", color=HEX_COLOR)
-    assy.add(_make_cable(),       name="usb_cable",   color=CABLE_COLOR)
+    # 預留電纜已移除，由前端 canvas 的 bridge cable 直接從六角護套位置拉出
     assy.add(_make_qc_label(),    name="qc_label",    color=LABEL_COLOR)
 
     for i, s in enumerate(_make_back_screws()):

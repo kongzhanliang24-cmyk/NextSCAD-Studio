@@ -302,7 +302,7 @@ def make_instrument() -> cq.Assembly:
     for name, panel in panels.items():
         if panel_holes[name] is not None:
             panel = panel.cut(panel_holes[name])
-        assy.add(panel, name=f"panel_{name}", color=cq.Color("gray80"))
+        assy.add(panel, name=f"panel_{name}", color=cq.Color("gray90"))
 
     # ── 前邊框側邊包邊上的螺絲（左右各 2 顆，共 4 顆）──
     # 螺絲穿過包邊鎖入侧板；螺頭露在包邊外表面

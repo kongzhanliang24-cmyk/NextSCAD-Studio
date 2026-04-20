@@ -158,11 +158,25 @@
       },
       {
         "id": "gpio",
-        "label": { "zh": "GPIO 模組", "en": "GPIO Module" },
-        "description": { "zh": "連接外部號誌燈與工業訊號。", "en": "Connect tower lights and industrial signals." },
+        "label": { "zh": "GPIO 三色塔燈", "en": "GPIO Tower Light" },
+        "description": { "zh": "透過 GPIO 模組驅動的三色號誌塔燈，連接外部工業訊號，冷鏈現場作業狀態一目了然。", "en": "A three-color signal tower driven by the GPIO module, connecting to external industrial signals so cold-chain operational status is instantly visible." },
         "type": "gpio",
+        "glbPath": "/models/tower_light.glb",
+        "glbTransform": { "targetSize": 2.5, "rotation": [0, 0, 0] },
         "anchor": [1.04, 0.14, 0.02],
-        "position": [1.58, 0.18, 0.02],
+        "position": [2.5, 0.65, 0],
+        "focusPreset": "ports",
+        "dependencies": []
+      },
+      {
+        "id": "rs232_plug",
+        "label": { "zh": "RS232 連接線", "en": "RS232 Cable" },
+        "description": { "zh": "DB9 母頭連接線插頭，對接儀表背面 RS232 公座，冷鏈現場秤重資料傳輸至 WMS/ERP 工控機。", "en": "DB9 female cable connector mating with the rear RS232 male port to transmit cold-chain weighing data to WMS/ERP industrial controllers." },
+        "type": "rs232_plug",
+        "glbPath": "/models/rs232_plug.glb",
+        "glbTransform": { "targetSize": 0.45, "rotation": [1.5707, 3.14159, 0] },
+        "anchor": [0.868, 0.233, 0.164],
+        "position": [0.868, 0.233, -0.10],
         "focusPreset": "ports",
         "dependencies": []
       }

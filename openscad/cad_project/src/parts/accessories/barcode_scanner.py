@@ -259,7 +259,7 @@ def _make_cable_tube() -> cq.Workplane:
 def _make_cable_segment() -> cq.Workplane:
     cable = (
         cq.Workplane("XY")
-        .circle(2.5)
+        .circle(2.7)
         .extrude(-45.0)
         .translate((0, 0, -19.0))
     )
@@ -282,8 +282,7 @@ def make_barcode_scanner() -> cq.Assembly:
     assy.add(_make_led_insert(),   name="led_indicator",  color=LED_COLOR)
     assy.add(_make_trigger(),      name="trigger",       color=TRIGGER_COLOR)
     assy.add(_make_cable_guard(),  name="cable_guard",   color=RUBBER_COLOR)
-    assy.add(_make_cable_tube(),   name="cable_tube",    color=RUBBER_COLOR)
-    assy.add(_make_cable_segment(),name="usb_cable",     color=CABLE_COLOR)
+    # 橡膠 tube 與預留電纜段已移除，由前端 canvas 的 bridge cable 直接從手柄底出
     assy.add(_make_brand_logo(),   name="brand_logo",    color=LOGO_COLOR)
     assy.add(_make_bottom_label(), name="bottom_label",  color=LABEL_COLOR)
     assy.add(_make_side_label(),   name="side_label",    color=LABEL_COLOR)

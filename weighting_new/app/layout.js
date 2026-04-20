@@ -15,14 +15,14 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    default: '宏德度量衡｜智能秤與稱重系統',
-    template: '%s｜宏德度量衡'
+    default: 'NextSCAD Studio｜參數化 CAD 與智能稱重系統',
+    template: '%s｜NextSCAD Studio'
   },
-  description: '專注智能秤、智能稱重系統、稱重資料整合與多行業案例的科技品牌官網。',
-  applicationName: 'Honder Scale',
+  description: 'NextSCAD Studio：以參數化 CAD 建模、Web 3D 與智能稱重系統整合為核心的開源品牌。',
+  applicationName: 'NextSCAD Studio',
   openGraph: {
-    title: '宏德度量衡｜智能秤與稱重系統',
-    description: '專注智能秤、智能稱重系統、稱重資料整合與多行業案例的科技品牌官網。',
+    title: 'NextSCAD Studio｜參數化 CAD 與智能稱重系統',
+    description: 'NextSCAD Studio：以參數化 CAD 建模、Web 3D 與智能稱重系統整合為核心的開源品牌。',
     type: 'website',
     locale: 'zh_TW'
   },

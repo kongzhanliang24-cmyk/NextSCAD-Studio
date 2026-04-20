@@ -11,27 +11,31 @@ import truckScaleSystem from '@/content/data/solutions/truck-scale-system.json'
 import warehouseSystem from '@/content/data/solutions/warehouse-system.json'
 
 export const companyInfo = {
-  brandName: { zh: '宏德度量衡', en: 'Honder Scale' },
+  brandName: { zh: 'NextSCAD Studio', en: 'NextSCAD Studio' },
   fullName: aboutData.company.name,
   tagline: {
-    zh: '智能秤與智能稱重系統整合品牌',
-    en: 'Integrated brand for smart scales and intelligent weighing systems'
+    zh: '參數化 CAD 建模 × 智能稱重系統',
+    en: 'Parametric CAD modeling × Intelligent weighing systems'
   },
   description: aboutData.company.desc,
   mission: aboutData.company.mission,
-  phone: '02-2289-9888',
-  mobile: '0922-566-696',
-  fax: '02-2289-6966',
-  email: 'honder.scale@msa.hinet.net',
-  hours: { zh: '週一至週五 09:00-18:00', en: 'Mon-Fri 09:00-18:00' },
-  storeAddress: { zh: '台北市士林區福港街146-1號', en: 'No. 146-1, Fugang St., Shilin Dist., Taipei' },
+  phone: '—',
+  mobile: '—',
+  fax: '—',
+  email: 'kongzhanliang24@github',
+  hours: { zh: '依 GitHub Issues 回覆', en: 'Respond via GitHub Issues' },
+  storeAddress: {
+    zh: 'GitHub：github.com/kongzhanliang24-cmyk/NextSCAD-Studio',
+    en: 'GitHub: github.com/kongzhanliang24-cmyk/NextSCAD-Studio'
+  },
   factoryAddress: {
-    zh: '新北市八里區仁愛路118號（設有產品展示間及維修中心）',
-    en: 'No. 118, Renai Rd., Bali Dist., New Taipei (Showroom & Service Center)'
+    zh: '開源倉庫（歡迎 Pull Request）',
+    en: 'Open-source repository (Pull Requests welcome)'
   },
   socialLinks: [
-    { label: 'Facebook', href: 'https://www.facebook.com/honder.scale/' },
-    { label: 'LINE', href: 'https://line.me/R/ti/p/%40794nznyg' }
+    { label: 'GitHub', href: 'https://github.com/kongzhanliang24-cmyk/NextSCAD-Studio' },
+    { label: 'Facebook', href: 'https://github.com/kongzhanliang24-cmyk/NextSCAD-Studio' },
+    { label: 'LINE', href: 'https://github.com/kongzhanliang24-cmyk/NextSCAD-Studio' }
   ]
 }
 

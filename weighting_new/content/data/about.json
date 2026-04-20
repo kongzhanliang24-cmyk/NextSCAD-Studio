@@ -1,13 +1,13 @@
 {
   "company": {
-    "name": { "zh": "宏德度量衡科技有限公司", "en": "Honder Scale Technology Co., Ltd." },
+    "name": { "zh": "NextSCAD Studio", "en": "NextSCAD Studio" },
     "desc": {
-      "zh": "我們專注於智能秤設備與智能稱重系統整合，為食品加工、倉儲物流、冷鏈、車輛過磅等場景提供可採集、可追溯、可串接的稱重解決方案，協助客戶把現場秤重升級為可管理的數據流程。",
-      "en": "We specialize in smart scale devices and intelligent weighing system integration, delivering traceable and connected weighing solutions for food processing, warehouse logistics, cold-chain, and vehicle weighing scenarios." 
+      "zh": "NextSCAD Studio 以參數化 CAD 建模為核心，結合 Web 3D 與智能稱重系統整合，為食品加工、倉儲物流、冷鏈、車輛過磅等場景提供可視化、可追溯、可串接的稱重解決方案。",
+      "en": "NextSCAD Studio combines parametric CAD modeling, Web 3D, and intelligent weighing system integration—delivering visual, traceable, and connected solutions for food processing, warehouse logistics, cold-chain, and vehicle weighing."
     },
     "mission": {
-      "zh": "讓每一台智能秤都成為企業數據流程的一部分。",
-      "en": "Make every smart scale a connected part of the enterprise data workflow." 
+      "zh": "讓每一台智能秤從 3D 模型到現場資料，都成為企業數位流程的一部分。",
+      "en": "From 3D model to on-site data, make every smart scale part of the enterprise digital workflow."
     }
   },
   "stats": [
