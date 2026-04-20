@@ -1,0 +1,243 @@
+{
+  "slug": "xz-5000",
+  "model": "XZ-5000",
+  "category": "waterproof",
+  "title": { "zh": "XZ-5000 防水智能秤", "en": "XZ-5000 Waterproof Smart Scale" },
+  "short_desc": { "zh": "適合冷鏈與高濕作業、支援資料採集的防水智能秤", "en": "A waterproof smart scale for cold-chain and high-humidity operations with data capture support" },
+  "hero_image": "",
+  "video_url": "",
+  "features": [
+    {
+      "icon": "Droplets",
+      "title": { "zh": "IP68 防水防護", "en": "IP68 Waterproof Protection" },
+      "desc": { "zh": "可直接沖洗，適合高濕與清洗頻繁的智能作業環境", "en": "Washable and suitable for humid, frequently cleaned smart operations" }
+    },
+    {
+      "icon": "Shield",
+      "title": { "zh": "高精度感測", "en": "High-Precision Sensing" },
+      "desc": { "zh": "進口感測模組，維持穩定準確的智能秤讀值", "en": "Imported sensing module delivers stable and accurate smart-scale readings" }
+    },
+    {
+      "icon": "Link",
+      "title": { "zh": "資料連接能力", "en": "Connected Data Interface" },
+      "desc": { "zh": "支援資料輸出，可接入 WMS、ERP 與現場採集流程", "en": "Supports data output for WMS, ERP, and on-site collection workflows" }
+    },
+    {
+      "icon": "BatteryFull",
+      "title": { "zh": "長時間續航", "en": "Long Runtime" },
+      "desc": { "zh": "內建高容量電池，滿足移動或高頻作業場景", "en": "Built-in high-capacity battery for mobile or high-frequency operations" }
+    }
+  ],
+  "specs": [
+    { "name": { "zh": "型號", "en": "Model" }, "value": "XZ-5000" },
+    { "name": { "zh": "最大秤量", "en": "Max Capacity" }, "value": "500kg" },
+    { "name": { "zh": "分度值", "en": "Division" }, "value": "20g" },
+    { "name": { "zh": "通訊介面", "en": "Communication Interface" }, "value": "RS232 / RS485" },
+    { "name": { "zh": "秤台尺寸", "en": "Platform Size" }, "value": "800×1000mm" },
+    { "name": { "zh": "材質", "en": "Material" }, "value": "SUS316" },
+    { "name": { "zh": "顯示", "en": "Display" }, "value": "LED" },
+    { "name": { "zh": "供電", "en": "Power" }, "value": "AC/DC 雙用 + 鋰電池" },
+    { "name": { "zh": "防護等級", "en": "Protection" }, "value": "IP68" }
+  ],
+  "applications": {
+    "zh": "適合海鮮處理、食品加工、冷鏈倉儲等需要防水與資料可追溯的智能稱重場景。",
+    "en": "Suitable for seafood processing, food production, and cold-chain storage where waterproofing and traceable smart weighing are required."
+  },
+  "detail_features": [
+    { "title": { "zh": "全密封防水秤體", "en": "Fully Sealed Waterproof Body" }, "desc": { "zh": "整機 IP68 防護，可直接沖洗，滿足高濕現場需求", "en": "Full IP68 protection for direct washing in humid environments" } },
+    { "title": { "zh": "智能資料輸出", "en": "Smart Data Output" }, "desc": { "zh": "可作為冷鏈智能秤終端，對接掃描、標籤與系統流程", "en": "Acts as a cold-chain smart scale terminal for scanning, labeling, and system workflows" } },
+    { "title": { "zh": "316 不銹鋼感測結構", "en": "316 Stainless Sensing Structure" }, "desc": { "zh": "高耐腐蝕感測與秤體結構，適合長期潮濕環境", "en": "Corrosion-resistant sensing and body structure for long-term humid operation" } },
+    { "title": { "zh": "長續航電池模組", "en": "Extended Battery Module" }, "desc": { "zh": "適合需要移動使用或不便長時間插電的場景", "en": "Ideal for mobile use or environments where constant power is inconvenient" } }
+  ],
+  "certifications": ["CE", "ISO9001", "OIML"],
+  "downloads": [
+    { "name": { "zh": "產品規格書", "en": "Product Datasheet" }, "file": "/downloads/xz-5000-spec.pdf" },
+    { "name": { "zh": "操作手冊", "en": "Operation Manual" }, "file": "/downloads/xz-5000-manual.pdf" },
+    { "name": { "zh": "校準報告", "en": "Calibration Report" }, "file": "/downloads/xz-5000-calibration.pdf" }
+  ],
+  "faq": [
+    {
+      "q": { "zh": "這台防水智能秤適合冷鏈嗎？", "en": "Is this waterproof smart scale suitable for cold-chain use?" },
+      "a": { "zh": "適合，IP68 防護與防水操作設計可滿足冷鏈與高濕倉儲作業。", "en": "Yes. Its IP68 protection and waterproof operation design fit cold-chain and humid warehouse scenarios." }
+    },
+    {
+      "q": { "zh": "資料可以上傳到系統嗎？", "en": "Can the data be uploaded into a system?" },
+      "a": { "zh": "可以，支援通訊輸出，可作為 WMS / ERP 的智能秤資料來源。", "en": "Yes. It supports communication output and can serve as a smart-scale data source for WMS or ERP." }
+    },
+    {
+      "q": { "zh": "是否支持定制？", "en": "Can it be customized?" },
+      "a": { "zh": "支持定制秤台尺寸、承重範圍與通訊需求。", "en": "Yes. Platform size, capacity range, and communication needs can be customized." }
+    },
+    {
+      "q": { "zh": "是否可接電腦與工控機？", "en": "Can it connect to PCs and industrial computers?" },
+      "a": { "zh": "支持 RS232 / RS485 通訊，可接入電腦、工控機與現場管理設備。", "en": "It supports RS232 / RS485 and can connect to PCs, industrial computers, and on-site management devices." }
+    }
+  ],
+  "configurator": {
+    "sceneTitle": { "zh": "在防水秤體上擴充掃描、列印與資料留存", "en": "Expand a waterproof scale with scanning, printing, and traceable data capture." },
+    "sceneDescription": { "zh": "把防水智能秤延伸成冷鏈現場資料節點，支援高濕環境的配件整合。", "en": "Turn the waterproof smart scale into a data node for cold-chain operations with humid-environment accessory support." },
+    "baseModel": {
+      "path": "/models/terminal_base.glb",
+      "status": "ready",
+      "renderMode": "glb",
+      "transform": {
+        "scale": 1,
+        "rotation": [0, 0, 0],
+        "position": [0, 0, 0]
+      }
+    },
+    "fallbackMedia": {
+      "eyebrow": { "zh": "Fallback Product Canvas", "en": "Fallback Product Canvas" },
+      "title": { "zh": "若裝置效能不足，會先以靜態視覺保留產品理解與配置導覽", "en": "If device performance is limited, the experience switches to a static visual mode while preserving product understanding and configuration guidance." },
+      "description": { "zh": "這個 fallback 主要用於 reduced motion、低效能裝置與尚未導入正式 GLB 模型的階段。", "en": "This fallback is used for reduced motion, low-power devices, and the pre-GLB stage before production models are delivered." }
+    },
+    "defaultAccessoryIds": ["usb"],
+    "cameraPresets": [
+      {
+        "id": "overview",
+        "label": { "zh": "整體總覽", "en": "Overview" },
+        "description": { "zh": "看防水結構與基本配置", "en": "View the waterproof structure and base setup." },
+        "position": [0, 0.1, 4.25],
+        "target": [0, 0, 0]
+      },
+      {
+        "id": "display",
+        "label": { "zh": "儀表與輸入", "en": "Display & Input" },
+        "description": { "zh": "聚焦操作面板與使用動線", "en": "Focus on the terminal display and input area." },
+        "position": [0.05, 0.18, 2.55],
+        "target": [0, 0.04, 0.12]
+      },
+      {
+        "id": "ports",
+        "label": { "zh": "接口與防護", "en": "Ports & Protection" },
+        "description": { "zh": "觀察接口與防護結構整合", "en": "Inspect interface placement and protected integration." },
+        "position": [1.95, -0.08, 2.8],
+        "target": [0.96, -0.18, 0]
+      }
+    ],
+    "accessories": [
+      {
+        "id": "scanner",
+        "label": { "zh": "掃碼槍", "en": "Scanner" },
+        "description": { "zh": "冷鏈流程條碼辨識與資料追溯。", "en": "Barcode recognition and traceability for cold-chain workflows." },
+        "type": "scanner",
+        "anchor": [0.98, -0.22, 0.03],
+        "position": [1.7, -0.58, 0.08],
+        "focusPreset": "ports",
+        "dependencies": []
+      },
+      {
+        "id": "usb",
+        "label": { "zh": "隨身碟", "en": "USB Drive" },
+        "description": { "zh": "快速離線轉存與稽核取樣。", "en": "Quick offline export and audit sampling." },
+        "type": "usb",
+        "anchor": [-0.92, -0.26, 0.03],
+        "position": [-1.24, -0.3, 0.06],
+        "focusPreset": "ports",
+        "dependencies": []
+      },
+      {
+        "id": "printer",
+        "label": { "zh": "列印機", "en": "Printer" },
+        "description": { "zh": "列印冷鏈標籤與批次資訊。", "en": "Print cold-chain labels and batch information." },
+        "type": "printer",
+        "anchor": [0.88, -0.28, 0.03],
+        "position": [-1.9, -0.72, 0],
+        "focusPreset": "overview",
+        "dependencies": []
+      },
+      {
+        "id": "camera",
+        "label": { "zh": "USB 攝像頭", "en": "USB Camera" },
+        "description": { "zh": "保留現場影像與檢驗紀錄。", "en": "Keep on-site imagery and inspection records." },
+        "type": "camera",
+        "anchor": [0.22, 0.58, 0.1],
+        "position": [0.34, 1.02, 0.12],
+        "focusPreset": "display",
+        "dependencies": []
+      },
+      {
+        "id": "gpio",
+        "label": { "zh": "GPIO 模組", "en": "GPIO Module" },
+        "description": { "zh": "連接外部號誌燈與工業訊號。", "en": "Connect tower lights and industrial signals." },
+        "type": "gpio",
+        "anchor": [1.04, 0.14, 0.02],
+        "position": [1.58, 0.18, 0.02],
+        "focusPreset": "ports",
+        "dependencies": []
+      }
+    ],
+    "storyScenes": [
+      {
+        "id": "waterproof-overview",
+        "eyebrow": { "zh": "Waterproof Core", "en": "Waterproof Core" },
+        "title": { "zh": "先用整體總覽，建立防水智能秤的耐候與系統感", "en": "Start with the overall view to establish the waterproof smart scale’s durability and system presence." },
+        "description": { "zh": "這一幕讓客戶先看到防水秤體、穩定結構與基本配置，理解它不是單純秤重，而是可擴充的冷鏈資料節點。", "en": "This scene shows the waterproof body, stable structure, and base setup first, framing it not as a simple scale but as an expandable cold-chain data node." },
+        "bullets": [
+          { "zh": "防水秤體與耐候設計", "en": "Waterproof body with durable structural design" },
+          { "zh": "適合作為冷鏈現場資料終端", "en": "Suitable as a cold-chain on-site data terminal" },
+          { "zh": "用總覽先建立產品定位", "en": "Use the overview to anchor product positioning" }
+        ],
+        "presetId": "overview",
+        "accessoryIds": ["usb"],
+        "focusAccessoryId": null
+      },
+      {
+        "id": "control-surface",
+        "eyebrow": { "zh": "Control Surface", "en": "Control Surface" },
+        "title": { "zh": "放大操作面板，讓智能秤像可執行流程的終端設備", "en": "Zoom into the control surface so the smart scale reads like an operational terminal." },
+        "description": { "zh": "這一幕把防水智能秤從硬體外觀帶向實際操作流程，突顯它可以承接輸入、顯示與判讀任務。", "en": "This scene moves from physical form into operation, showing how the waterproof smart scale handles input, display, and decision-making tasks." },
+        "bullets": [
+          { "zh": "在高濕現場仍維持可讀與可操作", "en": "Remains readable and operable in high-humidity environments" },
+          { "zh": "是現場輸入與回饋的交會點", "en": "Acts as the meeting point for input and feedback" },
+          { "zh": "讓產品更像系統界面而非單機設備", "en": "Makes the product feel like a system interface, not an isolated device" }
+        ],
+        "presetId": "display",
+        "accessoryIds": ["usb"],
+        "focusAccessoryId": null
+      },
+      {
+        "id": "scanner-chain",
+        "eyebrow": { "zh": "Scan + Cold Chain", "en": "Scan + Cold Chain" },
+        "title": { "zh": "掃碼槍接入後，冷鏈流程開始和智能秤同步", "en": "Once the scanner is connected, the cold-chain process starts syncing with the smart scale." },
+        "description": { "zh": "條碼辨識讓批次、物料與重量資訊在同一流程中完成，降低冷鏈現場人工轉錄風險。", "en": "Barcode capture brings batch, material, and weight information into one flow, reducing manual transcription risk in cold-chain operations." },
+        "bullets": [
+          { "zh": "批次辨識與重量記錄同步完成", "en": "Batch identification and weight capture happen together" },
+          { "zh": "降低高濕環境中的人工錯誤", "en": "Reduces manual error in wet environments" },
+          { "zh": "讓智能秤成為流程節點", "en": "Turns the smart scale into a workflow node" }
+        ],
+        "presetId": "ports",
+        "accessoryIds": ["scanner", "usb"],
+        "focusAccessoryId": "scanner"
+      },
+      {
+        "id": "label-and-signal",
+        "eyebrow": { "zh": "Label + Signal", "en": "Label + Signal" },
+        "title": { "zh": "列印機與 GPIO 讓防水智能秤延伸成現場流程控制中心", "en": "Printer and GPIO turn the waterproof smart scale into an on-site process control center." },
+        "description": { "zh": "標籤輸出與號誌控制把現場操作變得可執行、可提示、可追溯，強化冷鏈現場節奏。", "en": "Label output and signal control make on-site work executable, guided, and traceable, improving rhythm in cold-chain operations." },
+        "bullets": [
+          { "zh": "標籤輸出支援追溯與批次管理", "en": "Label output supports traceability and batch control" },
+          { "zh": "GPIO 對接訊號燈與現場控制", "en": "GPIO links into tower lights and site controls" },
+          { "zh": "把防水智能秤變成流程中樞", "en": "Transforms the waterproof smart scale into a process hub" }
+        ],
+        "presetId": "ports",
+        "accessoryIds": ["printer", "gpio", "usb"],
+        "focusAccessoryId": "printer"
+      },
+      {
+        "id": "evidence-capture",
+        "eyebrow": { "zh": "Evidence Capture", "en": "Evidence Capture" },
+        "title": { "zh": "攝像頭補上影像留證，讓防水智能秤完成可追溯閉環", "en": "The camera adds visual evidence capture, completing a traceable closed loop for the waterproof smart scale." },
+        "description": { "zh": "在冷鏈、檢驗與高規範場景中，影像與重量資料並行記錄，能讓智能秤提升到更高層級的管控工具。", "en": "In cold-chain, inspection, and highly regulated scenarios, simultaneous image and weight records elevate the smart scale into a higher-grade control tool." },
+        "bullets": [
+          { "zh": "影像與重量資料同時保留", "en": "Image and weight data are preserved together" },
+          { "zh": "支援異常稽核與檢驗證據", "en": "Supports exception auditing and inspection evidence" },
+          { "zh": "完成防水智能秤的高階場景敘事", "en": "Completes the high-end narrative for the waterproof smart scale" }
+        ],
+        "presetId": "display",
+        "accessoryIds": ["camera", "usb"],
+        "focusAccessoryId": "camera"
+      }
+    ]
+  }
+}

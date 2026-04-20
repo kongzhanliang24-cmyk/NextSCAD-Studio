@@ -1,0 +1,41 @@
+{
+  "slug": "cold-chain",
+  "title": { "zh": "冷鏈物流智能秤管理項目", "en": "Cold Chain Smart Scale Management Project" },
+  "industry": "coldchain",
+  "industry_label": { "zh": "冷鏈行業", "en": "Cold Chain" },
+  "system_used": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+  "result_summary": { "zh": "人工成本降低 50%", "en": "Labor cost reduced 50%" },
+  "background": {
+    "zh": "該冷鏈物流中心每日處理大量冷凍食品，低溫高濕使傳統設備故障率高，因此改以防水智能秤與數據化稱重流程取代舊作業模式。",
+    "en": "This cold-chain logistics center handles large volumes of frozen goods daily. Because low temperatures and humidity caused frequent failure in traditional equipment, it switched to waterproof smart scales and a data-driven weighing workflow."
+  },
+  "pain_points": [
+    { "zh": "低溫高濕環境下，舊設備穩定性差", "en": "Legacy equipment lacked stability in cold and humid environments" },
+    { "zh": "戴手套操作與人工記錄效率低", "en": "Glove use and manual recording reduced efficiency" },
+    { "zh": "紙本記錄在冷庫環境易受潮", "en": "Paper records were damaged easily in cold storage" },
+    { "zh": "出入庫資料無法即時核對", "en": "Inbound and outbound records could not be verified in real time" }
+  ],
+  "solution": {
+    "system": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+    "details": [
+      { "zh": "部署 3 台 XZ-5000 防水智能秤", "en": "Deployed 3 XZ-5000 waterproof smart scales" },
+      { "zh": "配備防水條碼掃描槍", "en": "Equipped waterproof barcode scanners" },
+      { "zh": "系統對接 WMS 倉儲管理", "en": "Integrated with WMS warehouse management" },
+      { "zh": "自動打印防水標籤", "en": "Enabled automatic waterproof label printing" }
+    ]
+  },
+  "cover_image": "/assets/images/cases/cold-chain/main.jpg",
+  "gallery": [
+    "/assets/images/cases/cold-chain/1.jpg",
+    "/assets/images/cases/cold-chain/2.jpg"
+  ],
+  "results": [
+    { "number": "50%", "label": { "zh": "人工成本降低", "en": "Labor cost reduced" } },
+    { "number": "35%", "label": { "zh": "出入庫效率提升", "en": "Inbound/outbound efficiency increase" } },
+    { "number": "95%", "label": { "zh": "數據準確率提升", "en": "Data accuracy improvement" } }
+  ],
+  "result_detail": {
+    "zh": "導入防水智能秤後，人工成本降低 50%，出入庫效率提升 35%，冷鏈作業數據準確率顯著提升，且可即時查詢。",
+    "en": "After deploying waterproof smart scales, labor costs dropped by 50%, inbound and outbound efficiency rose by 35%, and cold-chain operational data became significantly more accurate and instantly accessible."
+  }
+}

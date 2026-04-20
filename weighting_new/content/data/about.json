@@ -1,0 +1,46 @@
+{
+  "company": {
+    "name": { "zh": "宏德度量衡科技有限公司", "en": "Honder Scale Technology Co., Ltd." },
+    "desc": {
+      "zh": "我們專注於智能秤設備與智能稱重系統整合，為食品加工、倉儲物流、冷鏈、車輛過磅等場景提供可採集、可追溯、可串接的稱重解決方案，協助客戶把現場秤重升級為可管理的數據流程。",
+      "en": "We specialize in smart scale devices and intelligent weighing system integration, delivering traceable and connected weighing solutions for food processing, warehouse logistics, cold-chain, and vehicle weighing scenarios." 
+    },
+    "mission": {
+      "zh": "讓每一台智能秤都成為企業數據流程的一部分。",
+      "en": "Make every smart scale a connected part of the enterprise data workflow." 
+    }
+  },
+  "stats": [
+    { "number": "10+", "label": { "zh": "年智能稱重經驗", "en": "Years in Smart Weighing" } },
+    { "number": "500+", "label": { "zh": "服務企業", "en": "Businesses Served" } },
+    { "number": "1000+", "label": { "zh": "智能秤部署", "en": "Smart Scale Deployments" } },
+    { "number": "50+", "label": { "zh": "系統整合專案", "en": "System Integration Projects" } }
+  ],
+  "certifications": [
+    { "name": "CE", "desc": { "zh": "歐盟 CE 認證", "en": "EU CE Certification" } },
+    { "name": "ISO9001", "desc": { "zh": "品質管理體系認證", "en": "Quality Management System" } },
+    { "name": "OIML", "desc": { "zh": "國際法制計量組織認證", "en": "International Organization of Legal Metrology" } }
+  ],
+  "advantages": [
+    {
+      "icon": "Award",
+      "title": { "zh": "智能秤品質", "en": "Smart Scale Quality" },
+      "desc": { "zh": "所有智能秤終端皆經校準與測試，兼顧精度、穩定性與現場耐用度", "en": "Every smart scale terminal is calibrated and tested for precision, stability, and real-world durability" }
+    },
+    {
+      "icon": "Headphones",
+      "title": { "zh": "導入支援", "en": "Implementation Support" },
+      "desc": { "zh": "提供現場評估、安裝、培訓與維護，確保設備與流程真正落地", "en": "On-site assessment, installation, training, and maintenance ensure real operational adoption" }
+    },
+    {
+      "icon": "Settings",
+      "title": { "zh": "客製整合", "en": "Custom Integration" },
+      "desc": { "zh": "可依據產線、倉儲或車輛過磅情境，客製智能秤規格與系統功能", "en": "Customize smart scale specifications and system features for production, warehouse, or vehicle weighing scenarios" }
+    },
+    {
+      "icon": "TrendingUp",
+      "title": { "zh": "持續升級", "en": "Continuous Upgrade" },
+      "desc": { "zh": "以資料採集、報表與系統串接為核心，持續優化智能稱重能力", "en": "Continuously improve smart weighing capability through data capture, reporting, and integration" }
+    }
+  ]
+}

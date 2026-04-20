@@ -1,0 +1,91 @@
+{
+  "slug": "warehouse-system",
+  "title": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+  "subtitle": { "zh": "讓智能秤、掃描、報表與 ERP / WMS 真正連成流程", "en": "Connect smart scales, scanning, reporting, and ERP / WMS into one working process" },
+  "hero_image": "/assets/images/solutions/warehouse-system/main.jpg",
+  "pain_points": [
+    { "zh": "人工記錄易出錯，智能秤資料未被有效利用", "en": "Manual recording causes errors and smart-scale data is underutilized" },
+    { "zh": "無法即時取得報表，管理端缺乏現場數據支持", "en": "No real-time reporting means managers lack operational visibility" },
+    { "zh": "智能秤與 ERP / WMS 未打通，仍需重複輸入", "en": "Smart scales are not connected to ERP / WMS, causing duplicate data entry" },
+    { "zh": "稱重結果無法追溯，難以建立責任與流程紀錄", "en": "Weighing records are not traceable, making accountability difficult" }
+  ],
+  "architecture": {
+    "flow": [
+      { "zh": "智能秤終端", "en": "Smart Scale Terminal" },
+      { "zh": "稱重儀表", "en": "Weighing Indicator" },
+      { "zh": "工控機", "en": "Industrial PC" },
+      { "zh": "管理軟體", "en": "Management Software" },
+      { "zh": "數據庫", "en": "Database" },
+      { "zh": "ERP / WMS", "en": "ERP / WMS" }
+    ],
+    "extensions": [
+      { "zh": "條碼掃描槍", "en": "Barcode Scanner" },
+      { "zh": "標籤打印機", "en": "Label Printer" },
+      { "zh": "LED 顯示屏", "en": "LED Display" },
+      { "zh": "車牌識別", "en": "License Plate Recognition" }
+    ]
+  },
+  "composition": {
+    "hardware": [
+      { "zh": "智能秤終端（支持多型號）", "en": "Smart scale terminals (multiple models supported)" },
+      { "zh": "高精度感測模組", "en": "High-precision sensing modules" },
+      { "zh": "稱重儀表", "en": "Weighing indicators" }
+    ],
+    "software": [
+      { "zh": "資料自動採集模組", "en": "Automatic data capture module" },
+      { "zh": "報表統計分析模組", "en": "Report analytics module" },
+      { "zh": "多角色權限管理", "en": "Multi-role permission management" },
+      { "zh": "操作日誌追蹤", "en": "Operation log tracking" }
+    ],
+    "extensions": [
+      { "zh": "條碼掃描槍", "en": "Barcode scanner" },
+      { "zh": "標籤打印機", "en": "Label printer" }
+    ]
+  },
+  "core_features": [
+    {
+      "icon": "ClipboardCheck",
+      "title": { "zh": "智能秤自動記錄", "en": "Smart Scale Auto Logging" },
+      "desc": { "zh": "貨物上秤後自動讀取重量並保存，無需人工輸入", "en": "Weights are captured and stored automatically when goods are placed on the smart scale" }
+    },
+    {
+      "icon": "Users",
+      "title": { "zh": "多角色權限管理", "en": "Multi-role Permission" },
+      "desc": { "zh": "不同操作角色對應不同權限，流程安全可控", "en": "Different operational roles receive controlled permissions" }
+    },
+    {
+      "icon": "BarChart3",
+      "title": { "zh": "報表統計分析", "en": "Reporting Analytics" },
+      "desc": { "zh": "日報、月報與自定義報表即時產出", "en": "Daily, monthly, and custom reports are generated in real time" }
+    },
+    {
+      "icon": "Link",
+      "title": { "zh": "ERP / WMS 串接", "en": "ERP / WMS Integration" },
+      "desc": { "zh": "支援與主流 ERP / WMS 對接，智能秤資料可自動同步", "en": "Integrates with major ERP / WMS platforms so smart-scale data syncs automatically" }
+    }
+  ],
+  "process": [
+    { "zh": "貨物上秤", "en": "Place goods on smart scale" },
+    { "zh": "系統自動採集", "en": "System captures data automatically" },
+    { "zh": "數據保存", "en": "Data is saved" },
+    { "zh": "打印標籤", "en": "Print labels" },
+    { "zh": "同步 ERP / WMS", "en": "Sync to ERP / WMS" }
+  ],
+  "tech_specs": [
+    { "name": { "zh": "智能秤接入", "en": "Smart Scale Connection" }, "value": { "zh": "支持多台同時接入", "en": "Supports multiple smart scales simultaneously" } },
+    { "name": { "zh": "部署方式", "en": "Deployment" }, "value": { "zh": "局域網 / 私有化部署", "en": "LAN / Private deployment" } },
+    { "name": { "zh": "數據備份", "en": "Data Backup" }, "value": { "zh": "自動定時備份", "en": "Automatic scheduled backup" } },
+    { "name": { "zh": "擴展能力", "en": "Scalability" }, "value": { "zh": "支持雲端與多站點擴展", "en": "Supports cloud and multi-site expansion" } }
+  ],
+  "values": [
+    { "number": "30%", "label": { "zh": "效率提升", "en": "Efficiency Increase" } },
+    { "number": "50%", "label": { "zh": "人工成本降低", "en": "Labor Cost Reduction" } },
+    { "number": "90%", "label": { "zh": "錯誤率降低", "en": "Error Rate Reduction" } },
+    { "number": "100%", "label": { "zh": "數據可追溯", "en": "Data Traceability" } }
+  ],
+  "industries": [
+    { "zh": "食品加工", "en": "Food Processing" },
+    { "zh": "倉儲物流", "en": "Warehouse Logistics" },
+    { "zh": "冷鏈行業", "en": "Cold Chain" }
+  ]
+}

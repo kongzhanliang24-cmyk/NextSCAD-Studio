@@ -1,0 +1,45 @@
+{
+  "banners": [
+    {
+      "id": 1,
+      "title": { "zh": "智能秤品牌官網", "en": "Smart Scale Brand Experience" },
+      "subtitle": { "zh": "以高精度感測、數據採集與系統串接為核心的智能秤方案", "en": "Smart scale solutions centered on precision sensing, data capture, and system integration" },
+      "cta_text": { "zh": "查看智能秤", "en": "Explore Smart Scales" },
+      "cta_link": "/products",
+      "bg_color": "#1e3a5f"
+    },
+    {
+      "id": 2,
+      "title": { "zh": "智能稱重管理系統", "en": "Smart Weighing Management System" },
+      "subtitle": { "zh": "自動採集、即時報表、ERP / WMS 對接的一站式方案", "en": "Auto capture, live reporting, and ERP / WMS integration in one solution" },
+      "cta_text": { "zh": "獲取方案", "en": "Get Solution" },
+      "cta_link": "/solutions",
+      "bg_color": "#2d5a8e"
+    },
+    {
+      "id": 3,
+      "title": { "zh": "多場域智能秤落地案例", "en": "Smart Scale Deployments Across Industries" },
+      "subtitle": { "zh": "食品、冷鏈、倉儲與車輛過磅場景的智能稱重導入經驗", "en": "Smart weighing implementation for food, cold-chain, warehouse, and vehicle weighing scenarios" },
+      "cta_text": { "zh": "查看案例", "en": "View Cases" },
+      "cta_link": "/cases",
+      "bg_color": "#0f1f33"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "slug": "waterproof",
+      "name": { "zh": "防水智能秤", "en": "Waterproof Smart Scale" },
+      "desc": { "zh": "IP68 防護、支援數據採集與冷鏈高濕環境部署", "en": "IP68 protection with data capture capability for cold-chain and high-humidity environments" },
+      "link": "/products/waterproof"
+    },
+    {
+      "id": 2,
+      "slug": "platform",
+      "name": { "zh": "智能平台秤", "en": "Smart Platform Scale" },
+      "desc": { "zh": "高精度承重與通訊介面整合，適合產線與倉儲流程上線", "en": "High-precision weighing with communication interfaces for production and warehouse workflows" },
+      "link": "/products/platform"
+    }
+  ],
+  "featured_cases": ["food-factory", "cold-chain"]
+}

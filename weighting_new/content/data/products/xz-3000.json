@@ -1,0 +1,242 @@
+{
+  "slug": "xz-3000",
+  "model": "XZ-3000",
+  "category": "platform",
+  "title": { "zh": "XZ-3000 智能平台秤", "en": "XZ-3000 Smart Platform Scale" },
+  "short_desc": { "zh": "支援資料採集與流程串接的高精度智能平台秤", "en": "A high-precision smart platform scale built for data capture and workflow integration" },
+  "hero_image": "",
+  "video_url": "",
+  "features": [
+    {
+      "icon": "Shield",
+      "title": { "zh": "高精度感測模組", "en": "High-Precision Sensing Module" },
+      "desc": { "zh": "採用高精度感測技術，長時間輸出穩定可靠", "en": "Uses high-precision sensing technology for stable long-term performance" }
+    },
+    {
+      "icon": "Gauge",
+      "title": { "zh": "智能顯示終端", "en": "Smart Display Terminal" },
+      "desc": { "zh": "高亮 LED 顯示與直覺操作介面，現場讀值更快速", "en": "Bright LED display and intuitive controls for faster on-site reading" }
+    },
+    {
+      "icon": "Link",
+      "title": { "zh": "資料輸出整合", "en": "Data Output Integration" },
+      "desc": { "zh": "支援資料採集與系統對接，讓智能秤進入企業流程", "en": "Supports data collection and system integration so the smart scale becomes part of your workflow" }
+    },
+    {
+      "icon": "HardDrive",
+      "title": { "zh": "不銹鋼耐用秤體", "en": "Durable Stainless Structure" },
+      "desc": { "zh": "SUS304 不銹鋼結構，兼顧耐用度與清潔維護性", "en": "SUS304 stainless structure for durability and easy maintenance" }
+    }
+  ],
+  "specs": [
+    { "name": { "zh": "型號", "en": "Model" }, "value": "XZ-3000" },
+    { "name": { "zh": "最大秤量", "en": "Max Capacity" }, "value": "300kg" },
+    { "name": { "zh": "分度值", "en": "Division" }, "value": "10g" },
+    { "name": { "zh": "通訊介面", "en": "Communication Interface" }, "value": "RS232 / RS485" },
+    { "name": { "zh": "秤台尺寸", "en": "Platform Size" }, "value": "600×800mm" },
+    { "name": { "zh": "材質", "en": "Material" }, "value": "SUS304" },
+    { "name": { "zh": "顯示", "en": "Display" }, "value": "LED" },
+    { "name": { "zh": "供電", "en": "Power" }, "value": "AC/DC 雙用" },
+    { "name": { "zh": "防護等級", "en": "Protection" }, "value": "IP65" }
+  ],
+  "applications": {
+    "zh": "適合食品加工、倉儲物流、製造產線等需要精準稱重與資料上傳的智能場景。",
+    "en": "Ideal for food processing, warehouse logistics, and manufacturing lines that require precise weighing with data upload."
+  },
+  "detail_features": [
+    { "title": { "zh": "高亮智能顯示", "en": "Bright Smart Display" }, "desc": { "zh": "大字體與穩定顯示介面，現場查看重量更迅速", "en": "Large-font stable display for faster on-site reading" } },
+    { "title": { "zh": "通訊輸出模組", "en": "Communication Output Module" }, "desc": { "zh": "支援 RS232 / RS485，可連接電腦、工控機與管理系統", "en": "Supports RS232 / RS485 for PCs, industrial PCs, and management systems" } },
+    { "title": { "zh": "高精度感測核心", "en": "Precision Sensing Core" }, "desc": { "zh": "感測模組反應靈敏，適合日常連續作業", "en": "Responsive sensing core designed for continuous daily operations" } },
+    { "title": { "zh": "穩定承重結構", "en": "Stable Load Structure" }, "desc": { "zh": "可調式秤腳與秤台結構，讓智能秤在不同地面都能穩定工作", "en": "Adjustable feet and platform structure keep the smart scale stable across floor conditions" } }
+  ],
+  "certifications": ["CE", "ISO9001"],
+  "downloads": [
+    { "name": { "zh": "產品規格書", "en": "Product Datasheet" }, "file": "/downloads/xz-3000-spec.pdf" },
+    { "name": { "zh": "操作手冊", "en": "Operation Manual" }, "file": "/downloads/xz-3000-manual.pdf" }
+  ],
+  "faq": [
+    {
+      "q": { "zh": "是否支持智能秤客製化？", "en": "Can the smart scale be customized?" },
+      "a": { "zh": "支持，可依據秤台尺寸、承重範圍與通訊需求客製規格。", "en": "Yes. Platform size, capacity, and communication needs can all be customized." }
+    },
+    {
+      "q": { "zh": "能否接入既有系統？", "en": "Can it connect to existing systems?" },
+      "a": { "zh": "可透過 RS232 / RS485 與工控機或管理系統對接，作為智能秤資料來源。", "en": "It can integrate with industrial PCs or management systems through RS232 / RS485 as a smart-scale data source." }
+    },
+    {
+      "q": { "zh": "保修期多久？", "en": "What is the warranty period?" },
+      "a": { "zh": "整機保修一年，感測核心保修兩年。", "en": "One year warranty for the unit and two years for the sensing core." }
+    },
+    {
+      "q": { "zh": "是否提供安裝與培訓？", "en": "Do you provide installation and training?" },
+      "a": { "zh": "提供現場安裝、教育訓練與導入支援，協助智能秤快速上線。", "en": "Yes. We provide on-site installation, training, and onboarding support for fast deployment." }
+    }
+  ],
+  "configurator": {
+    "sceneTitle": { "zh": "安卓儀表作為核心，模組化接入現場配件", "en": "An Android terminal at the core, with modular accessories connected on demand." },
+    "sceneDescription": { "zh": "以基本配置為主體，逐步接入掃碼槍、USB、列印機、攝像頭與 GPIO 模組，對應現場作業流程。", "en": "Start from the base terminal, then attach scanner, USB, printer, camera, and GPIO modules according to workflow needs." },
+    "baseModel": {
+      "path": "/models/terminal_base.glb",
+      "status": "ready",
+      "renderMode": "glb",
+      "transform": {
+        "scale": 1,
+        "rotation": [0, 0, 0],
+        "position": [0, 0, 0]
+      }
+    },
+    "fallbackMedia": {
+      "eyebrow": { "zh": "Static Product Preview", "en": "Static Product Preview" },
+      "title": { "zh": "當前裝置使用靜態展示模式，仍可預覽配件邏輯與場景重點", "en": "This device is using static preview mode while still preserving accessory logic and scene emphasis." },
+      "description": { "zh": "若裝置效能不足、偵測到 reduced motion，或尚未提供正式 GLB 素材，系統會切換為靜態版 configurator。", "en": "If the device is underpowered, reduced motion is enabled, or production GLB assets are not ready, the configurator switches to a static presentation mode." }
+    },
+    "defaultAccessoryIds": [],
+    "cameraPresets": [
+      {
+        "id": "overview",
+        "label": { "zh": "整體總覽", "en": "Overview" },
+        "description": { "zh": "看基本配置與整體外觀", "en": "View the base configuration and overall form." },
+        "position": [0, 0.1, 4.1],
+        "target": [0, 0, 0]
+      },
+      {
+        "id": "display",
+        "label": { "zh": "儀表螢幕", "en": "Display" },
+        "description": { "zh": "聚焦安卓儀表與操作介面", "en": "Focus on the Android display and operating interface." },
+        "position": [0.1, 0.15, 2.45],
+        "target": [0, 0.02, 0.12]
+      },
+      {
+        "id": "ports",
+        "label": { "zh": "接口與配件", "en": "Ports & Accessories" },
+        "description": { "zh": "觀察 USB / GPIO 等擴充接口位置", "en": "Inspect USB, GPIO, and expansion interface positions." },
+        "position": [1.9, -0.1, 2.65],
+        "target": [0.9, -0.18, 0]
+      }
+    ],
+    "accessories": [
+      {
+        "id": "scanner",
+        "label": { "zh": "掃碼槍", "en": "Scanner" },
+        "description": { "zh": "連接前側 USB，快速完成條碼讀取。", "en": "Connect to the front USB port for fast barcode scanning." },
+        "type": "scanner",
+        "anchor": [0.98, -0.22, 0.03],
+        "position": [1.7, -0.58, 0.08],
+        "focusPreset": "ports",
+        "dependencies": []
+      },
+      {
+        "id": "usb",
+        "label": { "zh": "隨身碟", "en": "USB Drive" },
+        "description": { "zh": "做離線備份、報表匯出與快速交接。", "en": "Use for offline backup, report export, and rapid handoff." },
+        "type": "usb",
+        "anchor": [-0.92, -0.26, 0.03],
+        "position": [-1.24, -0.3, 0.06],
+        "focusPreset": "ports",
+        "dependencies": []
+      },
+      {
+        "id": "printer",
+        "label": { "zh": "列印機", "en": "Printer" },
+        "description": { "zh": "輸出標籤、收據與現場作業單。", "en": "Print labels, receipts, and on-site operation sheets." },
+        "type": "printer",
+        "anchor": [0.88, -0.28, 0.03],
+        "position": [-1.9, -0.72, 0],
+        "focusPreset": "overview",
+        "dependencies": []
+      },
+      {
+        "id": "camera",
+        "label": { "zh": "USB 攝像頭", "en": "USB Camera" },
+        "description": { "zh": "補足現場拍照取證與資料留存。", "en": "Capture on-site imagery for evidence and process records." },
+        "type": "camera",
+        "anchor": [0.22, 0.58, 0.1],
+        "position": [0.34, 1.02, 0.12],
+        "focusPreset": "display",
+        "dependencies": []
+      },
+      {
+        "id": "gpio",
+        "label": { "zh": "GPIO 模組", "en": "GPIO Module" },
+        "description": { "zh": "對接蜂鳴器、號誌燈與現場訊號控制。", "en": "Connect buzzers, tower lights, and on-site control signals." },
+        "type": "gpio",
+        "anchor": [1.04, 0.14, 0.02],
+        "position": [1.58, 0.18, 0.02],
+        "focusPreset": "ports",
+        "dependencies": []
+      }
+    ],
+    "storyScenes": [
+      {
+        "id": "overview",
+        "eyebrow": { "zh": "Base Terminal", "en": "Base Terminal" },
+        "title": { "zh": "先看智能秤主機本體，建立產品核心印象", "en": "Start with the smart-scale terminal itself to establish the core product impression." },
+        "description": { "zh": "這一幕只呈現基本配置與整體外觀，讓使用者先理解這台智能秤是現場資料節點，而不是單純顯示器。", "en": "This scene focuses on the base setup and overall form so users see the smart scale as an on-site data node, not just a display." },
+        "bullets": [
+          { "zh": "安卓儀表與秤體一體化", "en": "Integrated Android terminal and weighing body" },
+          { "zh": "先建立產品辨識，再進入接口細節", "en": "Establish product identity before moving into interface details" },
+          { "zh": "適合作為故事起點與總覽視角", "en": "Ideal as the opening scene and overview angle" }
+        ],
+        "presetId": "overview",
+        "accessoryIds": [],
+        "focusAccessoryId": null
+      },
+      {
+        "id": "display",
+        "eyebrow": { "zh": "Display Interface", "en": "Display Interface" },
+        "title": { "zh": "聚焦安卓儀表與操作畫面，讓智能秤像系統終端一樣被理解", "en": "Focus on the Android display and operating surface so the smart scale is understood like a system terminal." },
+        "description": { "zh": "從這一幕開始，敘事由外觀轉向使用流程，讓客戶理解它能承接輸入、顯示、資料採集與後續系統流程。", "en": "The narrative now shifts from form to usage, helping customers understand how it handles input, display, data capture, and downstream workflows." },
+        "bullets": [
+          { "zh": "高亮顯示與直覺操作介面", "en": "Bright display with intuitive operator flow" },
+          { "zh": "承接現場資料輸入與檢視", "en": "Supports on-site data entry and review" },
+          { "zh": "是智能秤體驗的核心入口", "en": "Acts as the core entry point of the smart-scale experience" }
+        ],
+        "presetId": "display",
+        "accessoryIds": [],
+        "focusAccessoryId": null
+      },
+      {
+        "id": "scanner-flow",
+        "eyebrow": { "zh": "Scan Workflow", "en": "Scan Workflow" },
+        "title": { "zh": "接入掃碼槍後，智能秤開始與條碼流程同步", "en": "Once the scanner is connected, the smart scale begins syncing with barcode-driven workflows." },
+        "description": { "zh": "掃碼槍是最直接的作業延伸，它讓現場辨識、過磅與資料紀錄變成單一流程。", "en": "The scanner is the most immediate operational extension, turning identification, weighing, and record capture into one continuous flow." },
+        "bullets": [
+          { "zh": "對應倉儲、產線與出入庫條碼作業", "en": "Aligned with warehouse, line-side, and inbound/outbound barcode work" },
+          { "zh": "讓資料從人工輸入轉向即時擷取", "en": "Moves data entry from manual typing to real-time capture" },
+          { "zh": "是智能秤模組化擴充的第一步", "en": "Represents the first step in modular smart-scale expansion" }
+        ],
+        "presetId": "ports",
+        "accessoryIds": ["scanner"],
+        "focusAccessoryId": "scanner"
+      },
+      {
+        "id": "integration-stack",
+        "eyebrow": { "zh": "Connected Operations", "en": "Connected Operations" },
+        "title": { "zh": "當 USB、列印機與 GPIO 接上後，智能秤就進入系統化作業場景", "en": "When USB, printer, and GPIO are attached, the smart scale enters a fully systemized operating context." },
+        "description": { "zh": "這一幕不是講單一配件，而是讓客戶感受到智能秤如何把資料輸出、標籤列印與現場控制整合成一套流程。", "en": "This scene is not about one accessory alone, but about showing how the smart scale combines data export, label printing, and on-site control into one process." },
+        "bullets": [
+          { "zh": "USB 做資料備份與匯出", "en": "USB handles backup and export" },
+          { "zh": "列印機處理標籤與作業單", "en": "Printer handles labels and operation slips" },
+          { "zh": "GPIO 對接訊號燈與控制設備", "en": "GPIO connects tower lights and control equipment" }
+        ],
+        "presetId": "ports",
+        "accessoryIds": ["usb", "printer", "gpio"],
+        "focusAccessoryId": "gpio"
+      },
+      {
+        "id": "evidence-loop",
+        "eyebrow": { "zh": "Traceable Evidence", "en": "Traceable Evidence" },
+        "title": { "zh": "最後加入 USB 攝像頭，讓智能秤具備影像留證能力", "en": "Finally, add the USB camera so the smart scale gains visual evidence capture capability." },
+        "description": { "zh": "對需要拍照記錄、異常留存或檢驗佐證的場景，這一幕把智能秤從稱重設備推進到可追溯作業節點。", "en": "For environments requiring photo records, anomaly retention, or inspection proof, this scene pushes the smart scale beyond weighing into a traceable operational node." },
+        "bullets": [
+          { "zh": "形成資料 + 影像雙軌紀錄", "en": "Creates dual-track records across data and imagery" },
+          { "zh": "強化異常追溯與稽核能力", "en": "Strengthens exception tracing and audit capability" },
+          { "zh": "完成智能秤的閉環故事", "en": "Completes the closed-loop smart-scale story" }
+        ],
+        "presetId": "display",
+        "accessoryIds": ["camera", "usb"],
+        "focusAccessoryId": "camera"
+      }
+    ]
+  }
+}

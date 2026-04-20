@@ -1,0 +1,28 @@
+{
+  "categories": [
+    { "slug": "waterproof", "name": { "zh": "防水智能秤", "en": "Waterproof Smart Scale" } },
+    { "slug": "platform", "name": { "zh": "智能平台秤", "en": "Smart Platform Scale" } }
+  ],
+  "products": [
+    {
+      "slug": "xz-3000",
+      "model": "XZ-3000",
+      "category": "platform",
+      "title": { "zh": "XZ-3000 智能平台秤", "en": "XZ-3000 Smart Platform Scale" },
+      "short_desc": { "zh": "支援資料採集與系統整合的高精度智能平台秤", "en": "A high-precision smart platform scale designed for data capture and system integration" },
+      "hero_image": "/assets/images/products/xz-3000/main.jpg",
+      "max_capacity": "300kg",
+      "division": "10g"
+    },
+    {
+      "slug": "xz-5000",
+      "model": "XZ-5000",
+      "category": "waterproof",
+      "title": { "zh": "XZ-5000 防水智能秤", "en": "XZ-5000 Waterproof Smart Scale" },
+      "short_desc": { "zh": "適用冷鏈與高濕環境、可直接沖洗的防水智能秤", "en": "A waterproof smart scale for cold-chain and high-humidity environments" },
+      "hero_image": "/assets/images/products/xz-5000/main.jpg",
+      "max_capacity": "500kg",
+      "division": "20g"
+    }
+  ]
+}

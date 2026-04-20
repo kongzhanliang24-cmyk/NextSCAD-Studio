@@ -1,0 +1,26 @@
+{
+  "solutions": [
+    {
+      "slug": "warehouse-system",
+      "title": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+      "subtitle": { "zh": "讓智能秤資料與入出庫流程即時同步", "en": "Synchronize smart-scale data with inbound and outbound workflows" },
+      "short_desc": { "zh": "以智能秤、掃描與 ERP / WMS 串接為核心的倉儲稱重方案", "en": "A warehouse weighing solution built around smart scales, scanning, and ERP / WMS integration" },
+      "industries": [
+        { "zh": "食品加工", "en": "Food Processing" },
+        { "zh": "倉儲物流", "en": "Warehouse Logistics" },
+        { "zh": "冷鏈行業", "en": "Cold Chain" }
+      ]
+    },
+    {
+      "slug": "truck-scale-system",
+      "title": { "zh": "車輛過磅智能稱重管理系統", "en": "Vehicle Weighing Smart Management System" },
+      "subtitle": { "zh": "將車輛過磅流程變成可追溯的數據系統", "en": "Turn vehicle weighing into a traceable data workflow" },
+      "short_desc": { "zh": "整合車輛過磅終端、車牌辨識、影像與 ERP / 財務系統的智能稱重方案", "en": "An intelligent weighing solution integrating vehicle-weighing terminals, LPR, imaging, and ERP / finance systems" },
+      "industries": [
+        { "zh": "砂石礦場", "en": "Mining" },
+        { "zh": "垃圾處理", "en": "Waste Management" },
+        { "zh": "倉儲物流", "en": "Warehouse Logistics" }
+      ]
+    }
+  ]
+}

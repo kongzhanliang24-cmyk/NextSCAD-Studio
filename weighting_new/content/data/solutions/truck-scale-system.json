@@ -1,0 +1,92 @@
+{
+  "slug": "truck-scale-system",
+  "title": { "zh": "車輛過磅智能稱重管理系統", "en": "Vehicle Weighing Smart Management System" },
+  "subtitle": { "zh": "把車輛過磅流程升級為自動化與可追溯的智能系統", "en": "Upgrade vehicle weighing into an automated and traceable smart system" },
+  "hero_image": "/assets/images/solutions/truck-scale-system/main.jpg",
+  "pain_points": [
+    { "zh": "車輛過磅依賴人工操作，效率低且難追蹤", "en": "Vehicle weighing relies heavily on manual operation and lacks traceability" },
+    { "zh": "人為作弊難監控，企業損失風險高", "en": "Human fraud is difficult to monitor, increasing business risk" },
+    { "zh": "紙本單據與離散資料難管理", "en": "Paper slips and fragmented records are hard to manage" },
+    { "zh": "車輛過磅資料無法快速對接 ERP / 財務系統", "en": "Vehicle-weighing data cannot flow efficiently into ERP / finance systems" }
+  ],
+  "architecture": {
+    "flow": [
+      { "zh": "車輛過磅智能終端", "en": "Vehicle Weighing Smart Terminal" },
+      { "zh": "車牌識別", "en": "License Plate Recognition" },
+      { "zh": "稱重儀表", "en": "Weighing Indicator" },
+      { "zh": "工控機", "en": "Industrial PC" },
+      { "zh": "管理軟體", "en": "Management Software" },
+      { "zh": "ERP / 財務系統", "en": "ERP / Financial System" }
+    ],
+    "extensions": [
+      { "zh": "監控攝像頭", "en": "Surveillance Camera" },
+      { "zh": "紅綠燈信號", "en": "Traffic Light Signal" },
+      { "zh": "LED 顯示屏", "en": "LED Display" },
+      { "zh": "道閘系統", "en": "Barrier Gate System" }
+    ]
+  },
+  "composition": {
+    "hardware": [
+      { "zh": "車輛過磅智能終端", "en": "Vehicle-weighing smart terminals" },
+      { "zh": "車牌識別攝像頭", "en": "License plate recognition cameras" },
+      { "zh": "稱重儀表", "en": "Weighing indicators" }
+    ],
+    "software": [
+      { "zh": "車輛管理模組", "en": "Vehicle management module" },
+      { "zh": "自動過磅模組", "en": "Automatic weighing module" },
+      { "zh": "結算管理模組", "en": "Settlement management module" },
+      { "zh": "防作弊監控模組", "en": "Anti-fraud monitoring module" }
+    ],
+    "extensions": [
+      { "zh": "監控攝像頭", "en": "Surveillance camera" },
+      { "zh": "道閘控制系統", "en": "Barrier gate system" }
+    ]
+  },
+  "core_features": [
+    {
+      "icon": "Camera",
+      "title": { "zh": "車牌自動識別", "en": "Automatic License Plate Recognition" },
+      "desc": { "zh": "車輛進出自動辨識，減少人工登記與等待時間", "en": "Vehicles are identified automatically, reducing manual registration and wait times" }
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": { "zh": "防作弊監控", "en": "Anti-fraud Monitoring" },
+      "desc": { "zh": "影像監控搭配重量異常判斷，降低人為舞弊風險", "en": "Video monitoring and anomaly checks reduce the risk of human fraud" }
+    },
+    {
+      "icon": "BarChart3",
+      "title": { "zh": "自動結算報表", "en": "Automated Settlement Reporting" },
+      "desc": { "zh": "按車次、日期與客戶自動生成結算資料", "en": "Settlement reports are generated automatically by trip, date, and customer" }
+    },
+    {
+      "icon": "Link",
+      "title": { "zh": "財務系統對接", "en": "Financial System Integration" },
+      "desc": { "zh": "車輛過磅智能終端資料可直接同步至 ERP / 財務系統", "en": "Vehicle-weighing smart-terminal data can sync directly into ERP / financial systems" }
+    }
+  ],
+  "process": [
+    { "zh": "車輛進場", "en": "Vehicle enters" },
+    { "zh": "車牌自動識別", "en": "License plate auto recognition" },
+    { "zh": "上秤稱重", "en": "Vehicle weighs on smart terminal" },
+    { "zh": "數據自動記錄", "en": "Data is logged automatically" },
+    { "zh": "打印磅單", "en": "Print weighing slip" },
+    { "zh": "同步 ERP / 財務系統", "en": "Sync to ERP / financial system" }
+  ],
+  "tech_specs": [
+    { "name": { "zh": "過磅終端接入", "en": "Weighing Terminal Connection" }, "value": { "zh": "支持多台同時管理", "en": "Multiple vehicle-weighing terminals can be managed simultaneously" } },
+    { "name": { "zh": "部署方式", "en": "Deployment" }, "value": { "zh": "局域網 / 私有化部署", "en": "LAN / Private deployment" } },
+    { "name": { "zh": "車牌識別", "en": "LPR" }, "value": { "zh": "識別率 > 99%", "en": "Recognition rate > 99%" } },
+    { "name": { "zh": "擴展能力", "en": "Scalability" }, "value": { "zh": "支持多站點聯網管理", "en": "Supports multi-site networked management" } }
+  ],
+  "values": [
+    { "number": "40%", "label": { "zh": "過磅效率提升", "en": "Weighing Efficiency Increase" } },
+    { "number": "60%", "label": { "zh": "人工成本降低", "en": "Labor Cost Reduction" } },
+    { "number": "95%", "label": { "zh": "作弊風險下降", "en": "Fraud Risk Reduction" } },
+    { "number": "100%", "label": { "zh": "數據可追溯", "en": "Data Traceability" } }
+  ],
+  "industries": [
+    { "zh": "砂石礦場", "en": "Mining" },
+    { "zh": "垃圾處理", "en": "Waste Management" },
+    { "zh": "倉儲物流", "en": "Warehouse Logistics" }
+  ]
+}

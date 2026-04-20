@@ -1,0 +1,41 @@
+{
+  "slug": "food-factory",
+  "title": { "zh": "食品廠智能秤倉儲項目", "en": "Food Factory Smart Scale Warehouse Project" },
+  "industry": "food",
+  "industry_label": { "zh": "食品加工", "en": "Food Processing" },
+  "system_used": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+  "result_summary": { "zh": "提升稱重效率 40%", "en": "Efficiency increased by 40%" },
+  "background": {
+    "zh": "該食品廠日均處理 200+ 批次原料與成品，原本以人工記錄搭配傳統設備作業，資料需要二次輸入，效率低且容易出錯，因此導入智能秤與倉儲稱重系統。",
+    "en": "The food factory processes over 200 batches of ingredients and finished goods daily. Its previous manual process with traditional equipment required duplicate data entry, so it deployed smart scales and a warehouse weighing system."
+  },
+  "pain_points": [
+    { "zh": "手寫記錄容易出錯，資料難以辨識", "en": "Manual records caused frequent errors and illegibility" },
+    { "zh": "無法即時生成報表", "en": "Real-time reporting was unavailable" },
+    { "zh": "智能秤資料無法直接對接 ERP", "en": "Smart-scale data could not flow directly into ERP" },
+    { "zh": "稱重數據無法追溯", "en": "Weighing data was not traceable" }
+  ],
+  "solution": {
+    "system": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+    "details": [
+      { "zh": "部署 5 台 XZ-3000 智能平台秤", "en": "Deployed 5 XZ-3000 smart platform scales" },
+      { "zh": "對接客戶既有 ERP 系統", "en": "Integrated with the client’s ERP system" },
+      { "zh": "搭配標籤列印與掃描流程", "en": "Combined with label printing and scanning workflows" },
+      { "zh": "建立多角色權限管理", "en": "Implemented multi-role permission management" }
+    ]
+  },
+  "cover_image": "/assets/images/cases/food-factory/main.jpg",
+  "gallery": [
+    "/assets/images/cases/food-factory/1.jpg",
+    "/assets/images/cases/food-factory/2.jpg"
+  ],
+  "results": [
+    { "number": "40%", "label": { "zh": "稱重效率提升", "en": "Weighing efficiency increase" } },
+    { "number": "2人", "label": { "zh": "人工成本降低", "en": "Labor cost reduced" } },
+    { "number": "90%", "label": { "zh": "錯誤率降低", "en": "Error rate reduction" } }
+  ],
+  "result_detail": {
+    "zh": "導入智能秤與倉儲稱重系統後，稱重效率提升 40%，減少 2 名記錄人員，並讓所有稱重資料都能即時查詢與追溯。",
+    "en": "After introducing smart scales and the warehouse weighing system, efficiency increased by 40%, two recording roles were eliminated, and all weighing records became instantly searchable and traceable."
+  }
+}

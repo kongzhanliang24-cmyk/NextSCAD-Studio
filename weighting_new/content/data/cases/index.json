@@ -1,0 +1,27 @@
+{
+  "industries": [
+    { "slug": "all", "name": { "zh": "全部", "en": "All" } },
+    { "slug": "food", "name": { "zh": "食品加工", "en": "Food Processing" } },
+    { "slug": "coldchain", "name": { "zh": "冷鏈行業", "en": "Cold Chain" } }
+  ],
+  "cases": [
+    {
+      "slug": "food-factory",
+      "title": { "zh": "食品廠智能秤倉儲項目", "en": "Food Factory Smart Scale Warehouse Project" },
+      "industry": "food",
+      "industry_label": { "zh": "食品加工", "en": "Food Processing" },
+      "system_used": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+      "result_summary": { "zh": "稱重效率提升 40%", "en": "Weighing efficiency increased by 40%" },
+      "cover_image": "/assets/images/cases/food-factory/main.jpg"
+    },
+    {
+      "slug": "cold-chain",
+      "title": { "zh": "冷鏈物流智能秤管理項目", "en": "Cold Chain Smart Scale Management Project" },
+      "industry": "coldchain",
+      "industry_label": { "zh": "冷鏈行業", "en": "Cold Chain" },
+      "system_used": { "zh": "智能倉儲稱重管理系統", "en": "Smart Warehouse Weighing Management System" },
+      "result_summary": { "zh": "人工成本降低 50%", "en": "Labor cost reduced by 50%" },
+      "cover_image": "/assets/images/cases/cold-chain/main.jpg"
+    }
+  ]
+}
