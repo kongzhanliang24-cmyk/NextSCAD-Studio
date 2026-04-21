@@ -111,6 +111,68 @@ export const homeStoryMoments = [
   }
 ]
 
+export const homeStoryScenes = {
+  precision: {
+    deviceLabel: { zh: 'NextSCAD · XZ-5000', en: 'NextSCAD · XZ-5000' },
+    statusLabel: { zh: '感測器即時運行中', en: 'Sensors live' },
+    readoutValue: '1,248.56',
+    readoutUnit: 'kg',
+    stability: { zh: '穩定度 ±0.02%', en: 'Stability ±0.02%' },
+    unitOptions: ['kg', 'lb', 'g'],
+    environment: [
+      { label: { zh: '溫度', en: 'Temp' }, value: '-18.4°C' },
+      { label: { zh: '濕度', en: 'Humidity' }, value: '92% RH' }
+    ],
+    links: [
+      { label: 'LAN', tone: 'sky' },
+      { label: 'RS-485', tone: 'amber' },
+      { label: 'MQTT', tone: 'emerald' }
+    ]
+  },
+  integration: {
+    pipelineLabel: { zh: '資料流管線', en: 'Data pipeline' },
+    pulseLabel: { zh: '資料封包同步中', en: 'Packets streaming' },
+    nodes: [
+      {
+        tag: { zh: '設備端', en: 'Edge' },
+        title: { zh: '智能秤站點', en: 'Smart scale' },
+        meta: { zh: '多站點即時上傳', en: 'Multi-site uplink' }
+      },
+      {
+        tag: { zh: '資料平台', en: 'Platform' },
+        title: { zh: 'NextSCAD Hub', en: 'NextSCAD Hub' },
+        meta: { zh: '權限・追溯・報表', en: 'Access · Trace · Reports' }
+      },
+      {
+        tag: { zh: '企業系統', en: 'Enterprise' },
+        title: { zh: 'ERP / WMS', en: 'ERP / WMS' },
+        meta: { zh: '自動對接財務與庫存', en: 'Auto sync to finance & stock' }
+      }
+    ],
+    chips: [
+      { zh: 'Batch ID', en: 'Batch ID' },
+      { zh: 'Operator', en: 'Operator' },
+      { zh: 'Timestamp', en: 'Timestamp' }
+    ]
+  },
+  impact: {
+    dashboardLabel: { zh: '營運總覽', en: 'Operations overview' },
+    liveLabel: { zh: '即時', en: 'Live' },
+    kpis: [
+      { label: { zh: '人工輸入', en: 'Manual input' }, value: '-68%', trend: 'down' },
+      { label: { zh: '過磅週期', en: 'Weighing cycle' }, value: '-42%', trend: 'down' },
+      { label: { zh: '追溯覆蓋', en: 'Traceability' }, value: '100%', trend: 'up' }
+    ],
+    trendLabel: { zh: '準確度趨勢（30 日）', en: 'Accuracy trend (30 days)' },
+    trendValue: '99.86%',
+    ledger: [
+      { id: 'BT-20461', qty: '486.20 kg', status: { zh: '已入帳', en: 'Posted' } },
+      { id: 'BT-20462', qty: '312.04 kg', status: { zh: '同步中', en: 'Syncing' } },
+      { id: 'BT-20463', qty: '702.58 kg', status: { zh: '已入帳', en: 'Posted' } }
+    ]
+  }
+}
+
 export const homeValuePoints = [
   {
     title: { zh: '精準度', en: 'Accuracy' },
